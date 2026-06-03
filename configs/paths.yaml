@@ -1,0 +1,54 @@
+# Project Paths Configuration
+# Centralized path definitions for easy management
+
+paths:
+  # Data directories
+  data_root: "./data"
+  raw_data: "./data/raw"
+  interim_data: "./data/interim"
+  processed_data: "./data/processed"
+  external_data: "./data/external"
+  
+  # Processed dataset
+  easy_v0: "./data/processed/EASY-v0"
+  easy_v0_images: "./data/processed/EASY-v0/images"
+  easy_v0_labels: "./data/processed/EASY-v0/labels"
+  
+  # Source datasets
+  sail_o_vision: "./data/raw/sail_o_vision"
+  marineinst: "./data/raw/marineinst"
+  massmind: "./data/raw/massmind"
+  eranet: "./data/raw/eranet"
+  easy_acquisition: "./data/raw/easy_acquisition"
+  
+  # Models
+  models_root: "./models"
+  pretrained_models: "./models/pretrained"
+  checkpoints: "./models/checkpoints"
+  exported_models: "./models/exported"
+  
+  # Outputs
+  outputs_root: "./outputs"
+  figures: "./outputs/figures"
+  metrics: "./outputs/metrics"
+  predictions: "./outputs/predictions"
+  logs: "./outputs/logs"
+  
+  # Source code
+  src: "./src"
+  configs: "./configs"
+  notebooks: "./notebooks"
+  scripts: "./scripts"
+  docs: "./docs"
+  tests: "./tests"
+
+# Project settings
+project:
+  name: "EASY"
+  description: "Easy Maritime Awareness - Maritime Object Detection"
+  version: "0.1.0"
+  
+logging:
+  level: "INFO"
+  log_dir: "./outputs/logs"
+  log_file: "easy.log"

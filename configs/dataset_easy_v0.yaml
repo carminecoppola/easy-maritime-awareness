@@ -1,0 +1,59 @@
+# EASY-v0 Dataset Configuration
+# Unified maritime dataset for YOLO training
+
+dataset:
+  name: "EASY-v0"
+  version: "0.1.0"
+  description: "Unified maritime object detection dataset from public sources"
+  
+sources:
+  - name: "Sail-O-Vision"
+    path: "data/raw/sail_o_vision"
+    format: "custom"
+    split: 0.7  # 70% for training
+  - name: "MarineInst"
+    path: "data/raw/marineinst"
+    format: "coco"
+    split: 0.7
+  - name: "MassMind"
+    path: "data/raw/massmind"
+    format: "custom"
+    split: 0.7
+  - name: "ERA-Net"
+    path: "data/raw/eranet"
+    format: "coco"
+    split: 0.7
+  - name: "EASY Acquisition"
+    path: "data/raw/easy_acquisition"
+    format: "custom"
+    split: 0.8
+
+classes:
+  0: "ship"
+  1: "boat"
+  2: "speedboat"
+  3: "sailboat"
+  4: "buoy"
+  5: "structure"
+  6: "helicopter"
+  7: "aircraft"
+
+output:
+  format: "yolo"
+  path: "data/processed/EASY-v0"
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+augmentation:
+  enabled: true
+  brightness: 0.1
+  contrast: 0.1
+  saturation: 0.1
+  hue: 0.05
+  
+validation:
+  check_images: true
+  check_labels: true
+  min_image_size: 320
+  max_image_size: 2048
