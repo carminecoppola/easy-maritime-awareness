@@ -18,7 +18,12 @@ NC='\033[0m' # No Color
 # 1. Create Python virtual environment
 echo -e "${BLUE}[1/5] Creating Python virtual environment...${NC}"
 if [ ! -d "venv" ]; then
-    python3 -m venv venv
+    # Use Python 3.11 or fallback to python3
+    PYTHON_BIN="python3.11"
+    if ! command -v $PYTHON_BIN &> /dev/null; then
+        PYTHON_BIN="python3"
+    fi
+    $PYTHON_BIN -m venv venv
     echo -e "${GREEN}✓ Virtual environment created${NC}"
 else
     echo -e "${GREEN}✓ Virtual environment already exists${NC}"
