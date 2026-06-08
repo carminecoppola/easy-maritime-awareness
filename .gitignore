@@ -1,19 +1,28 @@
-# Data directories - large files not tracked
-data/raw/
-data/interim/
-data/processed/
-data/external/
+# Local dataset and pipeline artifacts
+/data/raw/
+/data/interim/
+/data/processed/
+/data/logs/
+/data/manifests/
+/data/external/
 
-# Model files - binary artifacts
-models/checkpoints/
-models/exported/
+# Model artifacts
+/models/checkpoints/
+/models/exported/
+/models/pretrained/
 *.pt
 *.onnx
 *.engine
 *.tflite
 
-# Media files - large video/image content
-outputs/
+# Runtime outputs
+/outputs/
+*.out
+*.err
+*.log
+logs/
+
+# Large media generated locally
 *.mp4
 *.avi
 *.mov
@@ -22,7 +31,7 @@ outputs/
 *.png
 *.gif
 
-# Python environment
+# Python caches and build outputs
 __pycache__/
 *.py[cod]
 *$py.class
@@ -54,27 +63,18 @@ ENV/
 env.bak/
 venv.bak/
 
-# IDE
+# IDE and OS noise
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 .DS_Store
+Thumbs.db
 
-# Jupyter
+# Notebook and test caches
 .ipynb_checkpoints/
 *.ipynb_checkpoints
-
-# Testing
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Logs
-*.log
-logs/
-
-# OS
-.DS_Store
-Thumbs.db

@@ -1,54 +1,38 @@
-# Project Paths Configuration
-# Centralized path definitions for easy management
+# EASY path configuration
+# Source of truth for storage layout and path resolution used by the
+# EASY-v0 dataset preparation pipeline.
 
-paths:
-  # Data directories
-  data_root: "./data"
-  raw_data: "./data/raw"
-  interim_data: "./data/interim"
-  processed_data: "./data/processed"
-  external_data: "./data/external"
-  
-  # Processed dataset
-  easy_v0: "./data/processed/EASY-v0"
-  easy_v0_images: "./data/processed/EASY-v0/images"
-  easy_v0_labels: "./data/processed/EASY-v0/labels"
-  
-  # Source datasets
-  sail_o_vision: "./data/raw/sail_o_vision"
-  marineinst: "./data/raw/marineinst"
-  massmind: "./data/raw/massmind"
-  eranet: "./data/raw/eranet"
-  easy_acquisition: "./data/raw/easy_acquisition"
-  
-  # Models
-  models_root: "./models"
-  pretrained_models: "./models/pretrained"
-  checkpoints: "./models/checkpoints"
-  exported_models: "./models/exported"
-  
-  # Outputs
-  outputs_root: "./outputs"
-  figures: "./outputs/figures"
-  metrics: "./outputs/metrics"
-  predictions: "./outputs/predictions"
-  logs: "./outputs/logs"
-  
-  # Source code
-  src: "./src"
-  configs: "./configs"
-  notebooks: "./notebooks"
-  scripts: "./scripts"
-  docs: "./docs"
-  tests: "./tests"
-
-# Project settings
 project:
-  name: "EASY"
-  description: "Easy Maritime Awareness - Maritime Object Detection"
-  version: "0.1.0"
-  
+  name: EASY
+  repository_name: easy-maritime-awareness
+  version: 0.1.0
+
+storage:
+  env_var: EASY_DATA_ROOT
+  username_env_vars:
+    - USER
+    - LOGNAME
+  username: null
+  fallback_root_template: /storage/internal_02/{username}/projects/easy-maritime-awareness-data
+
+  root: null
+  raw: "{root}/raw"
+  interim: "{root}/interim"
+  processed: "{root}/processed"
+  logs: "{root}/logs"
+  manifests: "{root}/manifests"
+  easy_v0: "{processed}/EASY-v0"
+
+  sources:
+    smd: "{raw}/smd"
+    seaships: "{raw}/seaships"
+    massmind: "{raw}/massmind"
+  source_layout:
+    images_subdir: images
+    annotations_subdir: annotations
+
 logging:
-  level: "INFO"
-  log_dir: "./outputs/logs"
-  log_file: "easy.log"
+  level: INFO
+  report_name: easy_v0_build_report.md
+  manifest_name: easy_v0_build_manifest.json
+  dataset_manifest_name: dataset_manifest.json
