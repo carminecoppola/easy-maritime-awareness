@@ -1,112 +1,66 @@
-# EASY: Easy Maritime Awareness
+# EASY — Environmental Awareness by the Sea and beYond
 
-**EASY** is a comprehensive Computer Vision project focused on maritime object detection and segmentation. The project leverages public maritime datasets to build a unified dataset (EASY-v0) and train state-of-the-art detection models for future integration with Raspberry Pi edge devices equipped with RGB and FLIR cameras.
+EASY is a maritime perception project focused on building a **clean, reproducible dataset pipeline** for early multimodal object detection.
 
-## Project Goals
+The current repository is centered on:
+- dataset policy and taxonomy for `EASY-v0`
+- controlled staging of official source datasets
+- intermediate annotation normalization
+- YOLO export preparation
+- HPC-safe processing workflows
 
-1. **Dataset Analysis**: Analyze and understand public maritime datasets
-   - Sail-O-Vision
-   - MarineInst
-   - MassMind
-   - ERA-Net
-   - EASY Acquisition (custom)
+It is **not** currently a training-first repository. Training remains downstream of dataset preparation.
 
-2. **Unified Dataset**: Construct EASY-v0, a consolidated maritime object detection benchmark
+## Current Project Status
 
-3. **Model Training**: Develop and train YOLO-based models for:
-   - Object detection (ships, boats, structures)
-   - Instance segmentation (water, vessels, coastal features)
+Current canonical status:
+- official taxonomy frozen in `configs/dataset_schema.yaml`
+- official datasets: `SMD` (primary RGB), `SeaShips` (support RGB), `MassMIND` (thermal companion)
+- lightweight staging, parsing, intermediate conversion, and partial YOLO export are implemented
+- no official EASY-v0 full merge has been executed yet
+- no official training run has been started yet
 
-4. **Edge Integration**: Prepare models for deployment on:
-   - Raspberry Pi 4/5
-   - RGB cameras
-   - FLIR thermal cameras
+## Repository Guide
 
-## Quick Start
+Use these files as the only active project documentation:
+- `docs/PROJECT_OVERVIEW.md` — project vision, current status, roadmap
+- `docs/DATASET_POLICY.md` — taxonomy, official datasets, mapping and dataset decisions
+- `docs/STAGING_AND_HPC.md` — staging rules, storage layout, SLURM/HPC workflow
+- `docs/INTERMEDIATE_AND_YOLO_FORMATS.md` — intermediate record format and YOLO export behavior
 
-### Setup
+The single source of truth for class IDs and mappings is:
+- `configs/dataset_schema.yaml`
 
-```bash
-# Clone repository
-git clone <repo-url>
-cd easy-maritime-awareness
+## Repository Structure
 
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Project Structure
-
-```
+```text
 easy-maritime-awareness/
-├── data/                          # Data storage
-│   ├── raw/                       # Source datasets
-│   ├── processed/EASY-v0/         # Unified dataset
-│   └── external/                  # Additional resources
-├── src/                           # Source code
-│   ├── datasets/                  # Dataset utilities
-│   ├── training/                  # Model training
-│   ├── inference/                 # Prediction & deployment
-│   └── visualization/             # Analysis tools
-├── notebooks/                     # Jupyter notebooks
-├── configs/                       # Configuration files
-├── docs/                          # Documentation
-├── models/                        # Model artifacts
-├── outputs/                       # Results & metrics
-└── scripts/                       # Shell scripts
+├── configs/        # Canonical configuration and taxonomy
+├── docs/           # Active canonical docs
+├── scripts/        # Minimal operational helpers and SLURM jobs
+├── src/            # Dataset-core code only
+├── tests/          # Automated tests
+├── data/           # Local artifacts only (ignored / non-canonical)
+├── outputs/        # Local outputs only (ignored / non-canonical)
+└── models/         # Local model artifacts only (ignored / non-canonical)
 ```
 
-## Dataset Organization
+## Working Rules
 
-Public datasets are organized in `data/raw/`:
+- treat `data/`, `outputs/`, and `models/` as **local artifacts**, not as part of the canonical repository surface
+- use the frontend/login node only for lightweight validation and job preparation
+- use SLURM for heavy staging, extraction, parsing, conversion, and training
+- do not redefine taxonomy or class IDs outside `configs/dataset_schema.yaml`
 
-- `sail_o_vision/` - Sail-O-Vision dataset
-- `marineinst/` - MarineInst annotations
-- `massmind/` - MassMind dataset
-- `eranet/` - ERA-Net data
-- `easy_acquisition/` - Custom acquired data
+## Typical Workflow
 
-## Roadmap
+1. Inspect official dataset policy
+2. Stage source datasets in a controlled way
+3. Convert raw annotations into intermediate records
+4. Export YOLO-ready labels and dataset structure
+5. Validate the prepared dataset
+6. Only then start training work
 
-See [docs/project_plan.md](docs/project_plan.md) for detailed timeline and milestones.
+## Notes on Archived Material
 
-### Phase 1: Foundation (Week 1-2)
-- [ ] Repository setup & dataset analysis
-- [ ] EASY-v0 dataset construction
-
-### Phase 2: Training (Week 3-4)
-- [ ] YOLO baseline training
-- [ ] Model evaluation & error analysis
-
-### Phase 3: Hardware Integration (Week 5-6)
-- [ ] Raspberry Pi setup
-- [ ] RGB camera acquisition
-- [ ] FLIR thermal integration
-
-### Phase 4: Deployment (Week 7-8)
-- [ ] Model fine-tuning
-- [ ] Demo application
-
-## Key Features
-
-- **Modular Architecture**: Organized into datasets, training, inference, and utilities modules
-- **Configuration-Driven**: YAML-based configs for datasets and training parameters
-- **Comprehensive Testing**: Unit tests for dataset structure validation
-- **Documentation**: Detailed docs on dataset strategy, model approach, and hardware integration
-- **Reproducibility**: All experiments logged with metrics and predictions saved
-
-## Contributing
-
-Follow the project guidelines in [docs/](docs/) when adding new features.
-
-## License
-
-[To be determined]
-
-## Contact
-
-For questions or contributions, please open an issue or PR.
+Historical documentation and removed non-core code should be recovered from Git history if ever needed.

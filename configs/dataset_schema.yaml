@@ -1,0 +1,58 @@
+dataset:
+  name: EASY-v0
+  task: detection
+  format: yolo
+  version: 0.1
+
+classes:
+  - id: 0
+    name: boat
+    description: Small and medium maritime vessels such as boats, sailboats, fishing boats, kayaks, dinghies.
+  - id: 1
+    name: ship
+    description: Large vessels such as cargo ships, tankers, container ships, ferries, passenger ships.
+  - id: 2
+    name: buoy
+    description: Floating navigation markers, buoys, or maritime markers.
+  - id: 3
+    name: debris
+    description: Floating waste, nets, plastic, ropes, generic floating obstacles or marine litter.
+  - id: 4
+    name: person
+    description: Human figure visible in maritime scene, swimmer, person on small craft, or person in water.
+
+splits:
+  train: 0.70
+  val: 0.20
+  test: 0.10
+
+datasets:
+  primary_rgb: SMD
+  support_rgb: SeaShips
+  thermal_companion: MassMIND
+
+class_mapping:
+  smd:
+    boat: boat
+    vessel: boat
+    ship: ship
+    buoy: buoy
+    person: person
+    swimmer: person
+  seaships:
+    ore carrier: ship
+    bulk cargo carrier: ship
+    general cargo ship: ship
+    container ship: ship
+    fishing boat: boat
+    passenger ship: ship
+  massmind:
+    Obstacle: debris
+    Living Obstacle: person
+    Vessel: boat
+
+excluded_classes: []
+
+notes:
+  debris_gap: true
+  debris_gap_description: Debris is an official EASY-v0 class but is currently underrepresented in selected public RGB datasets. It will likely require future EASY proprietary acquisition.

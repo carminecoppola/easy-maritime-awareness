@@ -1,12 +1,6 @@
-"""
-EASY - Easy Maritime Awareness
-Computer Vision for maritime object detection and segmentation
-
-Main package initialization.
-"""
+"""EASY dataset-core package."""
 
 __version__ = "0.1.0"
-__author__ = "EASY Team"
 
 from .config import load_config
 
