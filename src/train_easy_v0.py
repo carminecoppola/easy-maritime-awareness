@@ -15,6 +15,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
+import torch
 from src.config import load_paths_config, resolve_storage_paths
 
 
@@ -87,6 +88,25 @@ def _write_run_metadata(output_dir: Path, payload: dict) -> Path:
     return metadata_path
 
 
+def _resolve_runtime_device(requested_device: str) -> str:
+    requested = str(requested_device).strip()
+    if requested.lower() == "cpu":
+        return "cpu"
+
+    # On this cluster the scheduler can expose a GPU while the local torch build
+    # still fails CUDA initialization because of a driver/runtime mismatch.
+    # Falling back explicitly keeps the job readable instead of crashing inside
+    # Ultralytics with a less actionable stack trace.
+    if not torch.cuda.is_available():
+        print(
+            "[EASY] warning: CUDA requested as '{}' but unavailable in this runtime; "
+            "falling back to CPU.".format(requested)
+        )
+        return "cpu"
+
+    return requested
+
+
 def main() -> None:
     args = _parse_args()
     dataset_yaml = _resolve_dataset_yaml(args)
@@ -127,6 +147,8 @@ def main() -> None:
     print("[EASY] run_name={}".format(args.name))
     print("[EASY] model={}".format(args.model))
     print("[EASY] metadata={}".format(metadata_path))
+    resolved_device = _resolve_runtime_device(args.device)
+    print("[EASY] resolved_device={}".format(resolved_device))
 
     model = YOLO(args.model)
     model.train(
@@ -135,7 +157,7 @@ def main() -> None:
         imgsz=args.imgsz,
         batch=args.batch,
         workers=args.workers,
-        device=args.device,
+        device=resolved_device,
         project=str(project_dir),
         name=args.name,
         seed=args.seed,
