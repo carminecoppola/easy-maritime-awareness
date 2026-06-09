@@ -6,7 +6,7 @@ The current repository is centered on:
 - dataset policy and taxonomy for `EASY-v0`
 - controlled staging of official source datasets
 - intermediate annotation normalization
-- YOLO export preparation
+- YOLO export and merged dataset build
 - HPC-safe processing workflows
 
 It is **not** a training-first repository. Training remains a thin downstream baseline over the prepared dataset.
@@ -16,9 +16,11 @@ It is **not** a training-first repository. Training remains a thin downstream ba
 Current canonical status:
 - official taxonomy frozen in `configs/dataset_schema.yaml`
 - official datasets: `SMD` (primary RGB), `SeaShips` (support RGB), `MassMIND` (thermal companion)
-- lightweight staging, parsing, intermediate conversion, and YOLO export are implemented
+- lightweight staging, parsing, intermediate conversion, YOLO export, and merged RGB build are implemented
 - the local merged RGB dataset `data/processed/EASY-v0` is ready for baseline training
 - a minimal SLURM-safe baseline training entrypoint is available
+- an initial CPU smoke training run has been executed successfully via SLURM
+- GPU baseline training still requires a cluster-compatible CUDA/PyTorch stack
 
 ## Repository Guide
 
@@ -52,6 +54,7 @@ easy-maritime-awareness/
 - treat `outputs/` and `models/` as local artifacts, not as part of the canonical repository surface
 - use the frontend/login node only for lightweight validation and job preparation
 - use SLURM for heavy staging, extraction, parsing, conversion, and training
+- SLURM logs must live under `outputs/logs/<job-name>/`
 - do not redefine taxonomy or class IDs outside `configs/dataset_schema.yaml`
 
 ## Typical Workflow
@@ -60,8 +63,8 @@ easy-maritime-awareness/
 2. Stage source datasets in a controlled way
 3. Convert raw annotations into intermediate records
 4. Export YOLO-ready labels and dataset structure
-5. Validate the prepared dataset
-6. Start baseline training from the merged EASY-v0 dataset
+5. Build and validate the merged `EASY-v0` dataset
+6. Run baseline training via SLURM
 
 ## Notes on Archived Material
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=easy-stage-smd
-#SBATCH --output=%x-%j.out
-#SBATCH --error=%x-%j.err
+#SBATCH --output=/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/logs/easy-stage-smd/%x-%j.out
+#SBATCH --error=/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/logs/easy-stage-smd/%x-%j.err
 #SBATCH --time=04:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G

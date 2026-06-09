@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=easy-validate-v0
-#SBATCH --output=%x-%j.out
-#SBATCH --error=%x-%j.err
+#SBATCH --output=/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/logs/easy-validate-v0/%x-%j.out
+#SBATCH --error=/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/logs/easy-validate-v0/%x-%j.err
 #SBATCH --time=00:20:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G

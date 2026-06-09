@@ -1,6 +1,7 @@
 import base64
 import json
 import sys
+from math import isclose
 from pathlib import Path
 
 import numpy as np
@@ -12,6 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from src.datasets.build_easy_v0 import build_easy_v0  # noqa: E402
+from src.datasets.class_mapping import load_dataset_schema, map_original_class  # noqa: E402
 from src.datasets.generate_dataset_manifest import generate_dataset_manifest  # noqa: E402
 from src.datasets.parsers import MassMINDParser, SMDParser, SeaShipsParser  # noqa: E402
 from src.datasets.validate_easy_v0 import (  # noqa: E402
@@ -21,11 +23,56 @@ from src.datasets.validate_easy_v0 import (  # noqa: E402
     validate_missing_pairs,
     validate_splits,
 )
+from src.config import (  # noqa: E402
+    DATASET_SCHEMA_PATH,
+    EASY_V0_CLASS_NAMES,
+    EASY_V0_CLASS_TO_ID,
+    EASY_V0_ID_TO_CLASS,
+    load_paths_config,
+    resolve_storage_paths,
+    resolve_storage_root,
+)
 
 
 PNG_1X1 = base64.b64decode(
     "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO5W3fQAAAAASUVORK5CYII="
 )
+
+
+def test_schema_and_storage_config(monkeypatch, tmp_path):
+    assert EASY_V0_CLASS_NAMES == ["boat", "ship", "buoy", "debris", "person"]
+    assert [EASY_V0_CLASS_TO_ID[name] for name in EASY_V0_CLASS_NAMES] == [0, 1, 2, 3, 4]
+    assert EASY_V0_ID_TO_CLASS == {
+        0: "boat",
+        1: "ship",
+        2: "buoy",
+        3: "debris",
+        4: "person",
+    }
+
+    assert map_original_class("SeaShips", "container ship") == "ship"
+    assert map_original_class("SMD", "buoy") == "buoy"
+    assert map_original_class("smd", "unknown-class") is None
+
+    schema = load_dataset_schema(DATASET_SCHEMA_PATH)
+    assert isclose(sum(schema["splits"].values()), 1.0, rel_tol=0.0, abs_tol=1e-9)
+
+    config = load_paths_config()
+    assert config["storage"]["env_var"] == "EASY_DATA_ROOT"
+
+    monkeypatch.setenv("EASY_DATA_ROOT", str(tmp_path / "easy-data"))
+    root = resolve_storage_root(load_paths_config())
+    assert root == tmp_path / "easy-data"
+
+    paths = resolve_storage_paths(load_paths_config())
+    assert paths["smd"] == tmp_path / "easy-data" / "raw" / "smd"
+    assert paths["easy_v0"] == tmp_path / "easy-data" / "processed" / "EASY-v0"
+
+
+def test_storage_root_defaults_to_repo_local_data(monkeypatch):
+    monkeypatch.delenv("EASY_DATA_ROOT", raising=False)
+    root = resolve_storage_root(load_paths_config())
+    assert root == PROJECT_ROOT / "data"
 
 
 def test_parsers_and_staging_layout(monkeypatch, tmp_path):

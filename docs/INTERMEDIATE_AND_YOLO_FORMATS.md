@@ -57,3 +57,10 @@ Current SMD export pipeline:
 4. dataset YAML is generated for the exported subset
 
 This supports partial per-dataset exports before full EASY-v0 merge.
+
+## Current Merge State
+
+The repository now also supports a real merged RGB build:
+- `SMD` and `SeaShips` are merged into `data/processed/EASY-v0`
+- `MassMIND` remains tracked as a thermal companion and is not mixed into the RGB YOLO export
+- `data/processed/EASY-v0/dataset.yaml` is the canonical training entrypoint for the current baseline
