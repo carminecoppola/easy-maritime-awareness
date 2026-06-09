@@ -4,7 +4,6 @@ __all__ = [
     "build_easy_v0",
     "class_mapping",
     "convert_to_yolo",
-    "dataset_registry",
     "export_smd_yolo",
     "generate_dataset_manifest",
     "generate_dataset_yaml",

@@ -56,6 +56,9 @@ Must go through SLURM:
 - statistics over full corpora
 - training and GPU workloads
 
+All SLURM jobs must write logs under:
+- `outputs/logs/<job-name>/`
+
 ## Current SMD Workflow
 
 Current recommended SMD path:
@@ -72,6 +75,9 @@ Relevant helpers currently include:
 - `scripts/install_unrar_user.sh`
 - `scripts/slurm/prepare_dataset.sbatch`
 - `scripts/slurm/stage_smd.sbatch`
+- `scripts/slurm/build_easy_v0.sbatch`
+- `scripts/slurm/train_easy_v0.sbatch`
+- `scripts/slurm/submit_easy_job.sh`
 
 These scripts are operational helpers; they do not redefine the project policy.
 
@@ -80,4 +86,4 @@ For `VIS_Onshore.rar`, the staging helpers can use:
 - `RAR_EXTRACTOR=/custom/path/to/unrar`
 - user-local installs such as `~/.local/bin/unrar` or `~/bin/unrar`
 
-The active scheduler surface is intentionally minimal: prepare dataset, stage SMD, build simulation, validate layout.
+The active scheduler surface is intentionally minimal: prepare dataset, stage SMD, build EASY-v0, validate layout, and run baseline training.

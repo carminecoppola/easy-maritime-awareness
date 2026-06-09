@@ -9,7 +9,7 @@ The current repository focuses on the **data pipeline layer** needed before and 
 - taxonomy freezing
 - controlled raw staging
 - intermediate normalization
-- YOLO export preparation
+- YOLO export and merged dataset build
 - HPC-safe orchestration
 - validation of dataset readiness
 
@@ -23,6 +23,8 @@ Current state of implementation:
 - YOLO export is implemented
 - the local merged RGB dataset `data/processed/EASY-v0` is available
 - a minimal baseline training entrypoint and SLURM job are available
+- an initial CPU smoke training run has been completed
+- GPU training is currently blocked by a CUDA/PyTorch compatibility mismatch on the cluster
 
 ## Official Scope Right Now
 
@@ -42,11 +44,11 @@ Not yet in active operational scope:
 ## Roadmap Direction
 
 Near-term direction:
-1. finish controlled staging of official datasets
-2. convert official sources into normalized intermediate records
-3. export stable YOLO-ready subsets
-4. validate merged EASY-v0 structure
-5. start baseline training only after dataset readiness is confirmed
+1. keep staged official datasets validated and reproducible
+2. maintain normalized intermediate records and YOLO exports
+3. validate merged EASY-v0 structure after data changes
+4. fix cluster GPU runtime compatibility
+5. run the first real GPU baseline training campaign
 
 ## Repository Interpretation
 
