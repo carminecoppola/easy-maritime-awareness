@@ -5,14 +5,15 @@
 Repository-tracked code and docs live in Git.
 Dataset contents and generated artifacts do not.
 
-Treat these directories as local or external artifacts:
+Treat these directories as local working areas:
 - `data/`
 - `outputs/`
 - `models/`
 
 Primary storage resolution is controlled by:
 - `configs/paths.yaml`
-- `EASY_DATA_ROOT` when set
+- repository-local `data/` by default
+- `EASY_DATA_ROOT` only when an explicit override is desired
 
 ## Staging Principles
 
@@ -68,9 +69,15 @@ Current recommended SMD path:
 
 Relevant helpers currently include:
 - `scripts/inspect_smd_downloads.py`
+- `scripts/install_unrar_user.sh`
 - `scripts/slurm/prepare_dataset.sbatch`
 - `scripts/slurm/stage_smd.sbatch`
 
 These scripts are operational helpers; they do not redefine the project policy.
+
+For `VIS_Onshore.rar`, the staging helpers can use:
+- `unrar` from `PATH`
+- `RAR_EXTRACTOR=/custom/path/to/unrar`
+- user-local installs such as `~/.local/bin/unrar` or `~/bin/unrar`
 
 The active scheduler surface is intentionally minimal: prepare dataset, stage SMD, build simulation, validate layout.

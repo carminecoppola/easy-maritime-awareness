@@ -18,6 +18,7 @@ EXTRACT_ROOT="${EXTRACT_ROOT:-$PROJECT_ROOT/data/raw/smd/source_downloads}"
 VISIBLE_MANIFEST_PATH="${VISIBLE_MANIFEST_PATH:-$DOWNLOADS_DIR/smd_visible_manifest.json}"
 ONBOARD_MEMBERS_PATH="${ONBOARD_MEMBERS_PATH:-$DOWNLOADS_DIR/smd_onboard_object_ready_members.txt}"
 ONSHORE_MEMBERS_PATH="${ONSHORE_MEMBERS_PATH:-$DOWNLOADS_DIR/smd_onshore_object_ready_members.txt}"
+RAR_EXTRACTOR="${RAR_EXTRACTOR:-}"
 
 SOURCE_ROOT="${SOURCE_ROOT:-$EXTRACT_ROOT}"
 IMAGES_DIR="${IMAGES_DIR:-$PROJECT_ROOT/data/raw/smd/images}"
@@ -35,6 +36,11 @@ if [[ ! -x "$VENV_PYTHON" ]]; then
 fi
 
 write_member_lists() {
+  if [[ -s "$VISIBLE_MANIFEST_PATH" && -s "$ONBOARD_MEMBERS_PATH" && -s "$ONSHORE_MEMBERS_PATH" ]]; then
+    echo "[EASY] reusing existing visible manifest and member lists"
+    return
+  fi
+
   "$VENV_PYTHON" scripts/inspect_smd_downloads.py \
     --downloads-dir "$DOWNLOADS_DIR" \
     --output "$VISIBLE_MANIFEST_PATH"
@@ -55,6 +61,52 @@ Path("$ONSHORE_MEMBERS_PATH").write_text(
 PY
 }
 
+detect_rar_extractor() {
+  local archive_path="$1"
+  local candidate=""
+  local -a candidates=()
+
+  if [[ -n "$RAR_EXTRACTOR" ]]; then
+    candidates+=("$RAR_EXTRACTOR")
+  fi
+
+  candidates+=(
+    "unrar"
+    "$HOME/.local/bin/unrar"
+    "$HOME/bin/unrar"
+    "$HOME/.easy/bin/unrar"
+    "7z"
+    "7za"
+  )
+
+  for candidate in "${candidates[@]}"; do
+    [[ -n "$candidate" ]] || continue
+
+    if [[ "$candidate" == */* ]]; then
+      [[ -x "$candidate" ]] || continue
+    else
+      command -v "$candidate" >/dev/null 2>&1 || continue
+    fi
+
+    case "$(basename "$candidate")" in
+      unrar)
+        if "$candidate" lt "$archive_path" >/dev/null 2>&1; then
+          echo "$candidate"
+          return 0
+        fi
+        ;;
+      7z|7za)
+        if "$candidate" l "$archive_path" >/dev/null 2>&1; then
+          echo "$candidate"
+          return 0
+        fi
+        ;;
+    esac
+  done
+
+  return 1
+}
+
 extract_visible() {
   mkdir -p "$EXTRACT_ROOT"
   write_member_lists
@@ -62,20 +114,31 @@ extract_visible() {
   echo "[EASY] extracting visible onboard ZIP into $EXTRACT_ROOT"
   unzip -n "$DOWNLOADS_DIR/VIS_Onboard.zip" -d "$EXTRACT_ROOT" $(tr '\n' ' ' < "$ONBOARD_MEMBERS_PATH")
 
-  if command -v unrar >/dev/null 2>&1; then
-    echo "[EASY] extracting visible onshore RAR via unrar into $EXTRACT_ROOT"
-    while IFS= read -r member; do
-      unrar x -o- "$DOWNLOADS_DIR/VIS_Onshore.rar" "$member" "$EXTRACT_ROOT/"
-    done < "$ONSHORE_MEMBERS_PATH"
-  elif command -v 7z >/dev/null 2>&1; then
-    echo "[EASY] extracting visible onshore RAR via 7z into $EXTRACT_ROOT"
-    while IFS= read -r member; do
-      7z x -aos "-o$EXTRACT_ROOT" "$DOWNLOADS_DIR/VIS_Onshore.rar" "$member"
-    done < "$ONSHORE_MEMBERS_PATH"
-  else
-    echo "[EASY] no RAR extractor found (need unrar or 7z)" >&2
+  local rar_extractor=""
+  rar_extractor="$(detect_rar_extractor "$DOWNLOADS_DIR/VIS_Onshore.rar")" || {
+    echo "[EASY] no working RAR extractor found for VIS_Onshore.rar" >&2
+    echo "[EASY] tried RAR_EXTRACTOR, unrar, ~/bin/unrar, ~/.local/bin/unrar, ~/.easy/bin/unrar, 7z, 7za" >&2
     exit 2
-  fi
+  }
+
+  case "$(basename "$rar_extractor")" in
+    unrar)
+      echo "[EASY] extracting visible onshore RAR via $rar_extractor into $EXTRACT_ROOT"
+      while IFS= read -r member; do
+        "$rar_extractor" x -o- "$DOWNLOADS_DIR/VIS_Onshore.rar" "$member" "$EXTRACT_ROOT/"
+      done < "$ONSHORE_MEMBERS_PATH"
+      ;;
+    7z|7za)
+      echo "[EASY] extracting visible onshore RAR via $rar_extractor into $EXTRACT_ROOT"
+      while IFS= read -r member; do
+        "$rar_extractor" x -aos "-o$EXTRACT_ROOT" "$DOWNLOADS_DIR/VIS_Onshore.rar" "$member"
+      done < "$ONSHORE_MEMBERS_PATH"
+      ;;
+    *)
+      echo "[EASY] unsupported RAR extractor: $rar_extractor" >&2
+      exit 2
+      ;;
+  esac
 }
 
 stage_intermediate() {
