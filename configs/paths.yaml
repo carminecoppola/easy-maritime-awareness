@@ -13,9 +13,9 @@ storage:
     - USER
     - LOGNAME
   username: null
-  fallback_root_template: /storage/internal_02/{username}/projects/easy-maritime-awareness-data
+  fallback_root_template: null
 
-  root: null
+  root: data
   raw: "{root}/raw"
   interim: "{root}/interim"
   processed: "{root}/processed"

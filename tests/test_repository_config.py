@@ -55,12 +55,10 @@ def test_paths_config_and_storage_resolution(monkeypatch, tmp_path):
     assert paths["easy_v0"] == tmp_path / "easy-data" / "processed" / "EASY-v0"
 
 
-def test_storage_root_fallback_is_external(monkeypatch):
+def test_storage_root_defaults_to_repo_local_data(monkeypatch):
     monkeypatch.delenv("EASY_DATA_ROOT", raising=False)
-    monkeypatch.setenv("USER", "easy-user")
     root = resolve_storage_root(load_paths_config())
-    assert str(root).startswith("/storage/internal_02/")
-    assert "easy-maritime-awareness-data" in str(root)
+    assert root == PROJECT_ROOT / "data"
 
 
 def test_download_plans_are_manual_only(monkeypatch, tmp_path):

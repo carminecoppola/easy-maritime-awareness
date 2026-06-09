@@ -4,7 +4,7 @@
 
 `EASY` (`Environmental Awareness by the Sea and beYond`) is a maritime perception project designed to build a reproducible foundation for RGB and thermal object understanding in marine scenes.
 
-The current repository focuses on the **data pipeline layer** needed before training:
+The current repository focuses on the **data pipeline layer** needed before and around baseline training:
 - source dataset selection
 - taxonomy freezing
 - controlled raw staging
@@ -20,9 +20,9 @@ Current state of implementation:
 - official source datasets are selected
 - lightweight staging utilities exist
 - SMD parsing and controlled staging are implemented
-- partial YOLO export from staged SMD data is implemented
-- full EASY-v0 merge is not yet complete
-- official baseline training has not yet started
+- YOLO export is implemented
+- the local merged RGB dataset `data/processed/EASY-v0` is available
+- a minimal baseline training entrypoint and SLURM job are available
 
 ## Official Scope Right Now
 
@@ -33,7 +33,7 @@ Mandatory current scope:
 - compatibility with HPC execution and later embedded deployment
 
 Not yet in active operational scope:
-- production training campaigns
+- production-scale training campaigns
 - segmentation-first workflows
 - tracking-first workflows
 - full multimodal fusion
@@ -53,11 +53,11 @@ Near-term direction:
 This repository should be read primarily as:
 - a **dataset engineering repository**
 - a **policy and orchestration repository**
-- a **pre-training preparation repository**
+- a **dataset-first baseline training repository**
 
 It should not currently be interpreted as a finished benchmark release or a completed training pipeline.
 
 ## Repository Boundary
 
-This repository now intentionally excludes non-core AI surfaces such as training, inference, and visualization.
-Those concerns are downstream of dataset readiness and are not part of the active working tree anymore.
+This repository intentionally keeps only a minimal training surface.
+Large training stacks, inference systems, and visualization frameworks are still outside the active core.

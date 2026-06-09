@@ -9,16 +9,16 @@ The current repository is centered on:
 - YOLO export preparation
 - HPC-safe processing workflows
 
-It is **not** currently a training-first repository. Training remains downstream of dataset preparation.
+It is **not** a training-first repository. Training remains a thin downstream baseline over the prepared dataset.
 
 ## Current Project Status
 
 Current canonical status:
 - official taxonomy frozen in `configs/dataset_schema.yaml`
 - official datasets: `SMD` (primary RGB), `SeaShips` (support RGB), `MassMIND` (thermal companion)
-- lightweight staging, parsing, intermediate conversion, and partial YOLO export are implemented
-- no official EASY-v0 full merge has been executed yet
-- no official training run has been started yet
+- lightweight staging, parsing, intermediate conversion, and YOLO export are implemented
+- the local merged RGB dataset `data/processed/EASY-v0` is ready for baseline training
+- a minimal SLURM-safe baseline training entrypoint is available
 
 ## Repository Guide
 
@@ -40,14 +40,16 @@ easy-maritime-awareness/
 ├── scripts/        # Minimal operational helpers and SLURM jobs
 ├── src/            # Dataset-core code only
 ├── tests/          # Automated tests
-├── data/           # Local artifacts only (ignored / non-canonical)
+├── data/           # Canonical dataset workspace for this repository
 ├── outputs/        # Local outputs only (ignored / non-canonical)
 └── models/         # Local model artifacts only (ignored / non-canonical)
 ```
 
 ## Working Rules
 
-- treat `data/`, `outputs/`, and `models/` as **local artifacts**, not as part of the canonical repository surface
+- use `data/` in this repository as the default dataset root
+- use `EASY_DATA_ROOT` only when you intentionally want to override that default
+- treat `outputs/` and `models/` as local artifacts, not as part of the canonical repository surface
 - use the frontend/login node only for lightweight validation and job preparation
 - use SLURM for heavy staging, extraction, parsing, conversion, and training
 - do not redefine taxonomy or class IDs outside `configs/dataset_schema.yaml`
@@ -59,7 +61,7 @@ easy-maritime-awareness/
 3. Convert raw annotations into intermediate records
 4. Export YOLO-ready labels and dataset structure
 5. Validate the prepared dataset
-6. Only then start training work
+6. Start baseline training from the merged EASY-v0 dataset
 
 ## Notes on Archived Material
 

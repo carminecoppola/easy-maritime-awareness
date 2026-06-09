@@ -144,12 +144,18 @@ def resolve_storage_root(paths_config: Optional[Dict[str, Any]] = None) -> Path:
 
     explicit_root = storage.get("root")
     if explicit_root:
-        return Path(str(explicit_root)).expanduser()
+        explicit_root_path = Path(str(explicit_root)).expanduser()
+        if not explicit_root_path.is_absolute():
+            explicit_root_path = (PROJECT_ROOT / explicit_root_path).resolve()
+        return explicit_root_path
 
     username = _resolve_username(config)
     template = storage.get("fallback_root_template")
     if not template:
-        raise ValueError("Paths configuration is missing storage.fallback_root_template")
+        raise ValueError(
+            "Paths configuration must define either storage.root or "
+            "storage.fallback_root_template"
+        )
 
     return Path(template.format(username=username)).expanduser()
 

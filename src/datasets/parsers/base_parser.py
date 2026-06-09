@@ -216,6 +216,22 @@ class BaseDatasetParser(object):
             original_class = obj.get("original_class") or obj.get("class_name") or obj.get("label")
             bbox_xyxy = obj.get("bbox_xyxy")
             bbox_xywh = obj.get("bbox_xywh") or obj.get("bbox")
+            if original_class is None and (
+                "easy_class" in obj or "class_id" in obj or "is_mapped" in obj
+            ):
+                objects.append(
+                    {
+                        "original_class": obj.get("original_class"),
+                        "easy_class": obj.get("easy_class"),
+                        "class_id": obj.get("class_id"),
+                        "is_mapped": obj.get("is_mapped", obj.get("easy_class") is not None),
+                        "bbox_xyxy": bbox_xyxy,
+                        "bbox_xywh": bbox_xywh,
+                        "attributes": obj.get("attributes") or {},
+                    }
+                )
+                continue
+
             objects.append(
                 self._build_object(
                     original_class=original_class,

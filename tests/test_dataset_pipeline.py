@@ -3,6 +3,8 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
+from PIL import Image
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -71,8 +73,10 @@ def test_smd_and_other_parsers_read_minimal_records(monkeypatch, tmp_path):
 
     seaships_images = data_root / "raw" / "seaships" / "images"
     seaships_annotations = data_root / "raw" / "seaships" / "annotations"
+    seaships_splits = data_root / "raw" / "seaships" / "source_downloads" / "ImageSets" / "Main"
     seaships_images.mkdir(parents=True)
     seaships_annotations.mkdir(parents=True)
+    seaships_splits.mkdir(parents=True)
     (seaships_images / "ship_001.png").write_bytes(PNG_1X1)
     (seaships_annotations / "ship_001.xml").write_text(
         """<annotation>
@@ -82,12 +86,16 @@ def test_smd_and_other_parsers_read_minimal_records(monkeypatch, tmp_path):
     <name>container ship</name>
     <bndbox><xmin>30</xmin><ymin>40</ymin><xmax>230</xmax><ymax>240</ymax></bndbox>
   </object>
-</annotation>""",
+    </annotation>""",
         encoding="utf-8",
     )
+    (seaships_splits / "train.txt").write_text("ship_001\n", encoding="utf-8")
+    (seaships_splits / "val.txt").write_text("", encoding="utf-8")
+    (seaships_splits / "test.txt").write_text("", encoding="utf-8")
     seaships_records = list(SeaShipsParser().iter_annotation_records())
     assert len(seaships_records) == 1
     assert seaships_records[0]["objects"][0]["easy_class"] == "ship"
+    assert seaships_records[0]["split"] == "train"
 
     massmind_images = data_root / "raw" / "massmind" / "images"
     massmind_annotations = data_root / "raw" / "massmind" / "annotations"
@@ -102,6 +110,39 @@ def test_smd_and_other_parsers_read_minimal_records(monkeypatch, tmp_path):
     massmind_records = list(MassMINDParser().iter_annotation_records())
     assert len(massmind_records) == 1
     assert massmind_records[0]["objects"][0]["easy_class"] == "person"
+
+
+def test_massmind_parser_reads_segmentation_pairs(monkeypatch, tmp_path):
+    data_root = tmp_path / "easy-data"
+    monkeypatch.setenv("EASY_DATA_ROOT", str(data_root))
+
+    massmind_images = data_root / "raw" / "massmind" / "images"
+    massmind_semantic = data_root / "raw" / "massmind" / "annotations" / "semantic"
+    massmind_instance = data_root / "raw" / "massmind" / "annotations" / "instance"
+    massmind_images.mkdir(parents=True)
+    massmind_semantic.mkdir(parents=True)
+    massmind_instance.mkdir(parents=True)
+
+    Image.fromarray(np.array([[10, 20], [30, 40]], dtype=np.uint8), mode="L").save(
+        massmind_images / "thermal_a.png"
+    )
+    Image.fromarray(np.array([[3, 3], [4, 0]], dtype=np.uint8), mode="L").save(
+        massmind_semantic / "thermal_a.png"
+    )
+    Image.fromarray(np.array([[1, 1], [2, 3]], dtype=np.uint16), mode="I;16").save(
+        massmind_instance / "thermal_a.png"
+    )
+
+    records = list(MassMINDParser().iter_annotation_records())
+    assert len(records) == 1
+    assert records[0]["width"] == 2
+    assert records[0]["height"] == 2
+    assert len(records[0]["objects"]) == 3
+
+    by_original = {obj["original_class"]: obj for obj in records[0]["objects"]}
+    assert by_original["Obstacle"]["easy_class"] == "debris"
+    assert by_original["Living Obstacle"]["easy_class"] == "person"
+    assert by_original["Sky"]["easy_class"] is None
 
 
 def test_dataset_manifest_counts(monkeypatch, tmp_path):
@@ -156,8 +197,82 @@ def test_validation_and_build_simulation(monkeypatch, tmp_path):
     )
     manifest = build["manifest"]
     assert manifest["metadata"]["mode"] == "simulation"
-    assert manifest["merge_plan"]["rgb_merge_datasets"] == ["smd", "seaships"]
-    assert manifest["merge_plan"]["thermal_companions"] == ["massmind"]
+    assert manifest["merge_result"]["mode"] == "simulation"
+
+
+def test_real_easy_v0_build_writes_merged_outputs(monkeypatch, tmp_path):
+    data_root = tmp_path / "easy-data"
+    monkeypatch.setenv("EASY_DATA_ROOT", str(data_root))
+
+    smd_images = data_root / "raw" / "smd" / "images"
+    smd_annotations = data_root / "raw" / "smd" / "annotations"
+    smd_images.mkdir(parents=True)
+    smd_annotations.mkdir(parents=True)
+    (smd_images / "frame_001.png").write_bytes(PNG_1X1)
+    (smd_annotations / "frame_001.json").write_text(
+        json.dumps(
+            {
+                "image_filename": "frame_001.png",
+                "width": 640,
+                "height": 480,
+                "objects": [{"class_name": "buoy", "bbox_xyxy": [10, 20, 110, 220]}],
+                "notes": ["source_sequence_id=SMD_SEQ_A"],
+                "source_sequence_id": "SMD_SEQ_A",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    seaships_images = data_root / "raw" / "seaships" / "images"
+    seaships_annotations = data_root / "raw" / "seaships" / "annotations"
+    seaships_splits = data_root / "raw" / "seaships" / "source_downloads" / "ImageSets" / "Main"
+    seaships_images.mkdir(parents=True)
+    seaships_annotations.mkdir(parents=True)
+    seaships_splits.mkdir(parents=True)
+    (seaships_images / "ship_001.png").write_bytes(PNG_1X1)
+    (seaships_annotations / "ship_001.xml").write_text(
+        """<annotation>
+  <filename>ship_001.png</filename>
+  <size><width>800</width><height>600</height></size>
+  <object>
+    <name>container ship</name>
+    <bndbox><xmin>30</xmin><ymin>40</ymin><xmax>230</xmax><ymax>240</ymax></bndbox>
+  </object>
+</annotation>""",
+        encoding="utf-8",
+    )
+    (seaships_splits / "train.txt").write_text("ship_001\n", encoding="utf-8")
+    (seaships_splits / "val.txt").write_text("", encoding="utf-8")
+    (seaships_splits / "test.txt").write_text("", encoding="utf-8")
+
+    massmind_images = data_root / "raw" / "massmind" / "images"
+    massmind_semantic = data_root / "raw" / "massmind" / "annotations" / "semantic"
+    massmind_instance = data_root / "raw" / "massmind" / "annotations" / "instance"
+    massmind_images.mkdir(parents=True)
+    massmind_semantic.mkdir(parents=True)
+    massmind_instance.mkdir(parents=True)
+    Image.fromarray(np.array([[10, 20], [30, 40]], dtype=np.uint8), mode="L").save(
+        massmind_images / "thermal_a.png"
+    )
+    Image.fromarray(np.array([[3, 3], [4, 0]], dtype=np.uint8), mode="L").save(
+        massmind_semantic / "thermal_a.png"
+    )
+    Image.fromarray(np.array([[1, 1], [2, 3]], dtype=np.uint16), mode="I;16").save(
+        massmind_instance / "thermal_a.png"
+    )
+
+    result = build_easy_v0(
+        paths_path=PROJECT_ROOT / "configs" / "paths.yaml",
+        simulate=False,
+        manifest_path=data_root / "manifests" / "build.json",
+        report_path=data_root / "logs" / "build.md",
+    )
+
+    manifest = result["manifest"]
+    assert manifest["metadata"]["mode"] == "real"
+    assert manifest["merge_result"]["rgb_summary"]["image_count"] == 2
+    assert manifest["merge_result"]["massmind_companion_summary"]["record_count"] == 1
+    assert (data_root / "processed" / "EASY-v0" / "dataset.yaml").exists()
 
 
 def test_validate_missing_pairs(tmp_path):
