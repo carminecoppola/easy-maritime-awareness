@@ -1,71 +1,74 @@
 # EASY — Environmental Awareness by the Sea and beYond
 
-EASY is a maritime perception project focused on building a **clean, reproducible dataset pipeline** for early multimodal object detection.
+EASY is a maritime perception repository currently focused on one active RGB workflow:
 
-The current repository is centered on:
-- dataset policy and taxonomy for `EASY-v0`
-- controlled staging of official source datasets
-- intermediate annotation normalization
-- YOLO export and merged dataset build
-- HPC-safe processing workflows
+- active dataset: `data/processed/EASY-v0-rgb3-balanced-v2`
+- active training surface: `YOLOv8n` baseline on `balanced-v2`
+- active analysis surface: balanced-v2 evaluation, sequence distribution, and boat-vs-buoy forensic analysis
 
-It is **not** a training-first repository. Training remains a thin downstream baseline over the prepared dataset.
+Historical datasets, scripts, SLURM jobs, and reports have been archived locally under `archive/`.
 
-## Current Project Status
+## Active Repository Surface
 
-Current canonical status:
-- official taxonomy frozen in `configs/dataset_schema.yaml`
-- official datasets: `SMD` (primary RGB), `SeaShips` (support RGB), `MassMIND` (thermal companion)
-- lightweight staging, parsing, intermediate conversion, YOLO export, and merged RGB build are implemented
-- the local merged RGB dataset `data/processed/EASY-v0` is ready for baseline training
-- a minimal SLURM-safe baseline training entrypoint is available
-- an initial CPU smoke training run has been executed successfully via SLURM
-- GPU baseline training still requires a cluster-compatible CUDA/PyTorch stack
+Keep these files as the canonical project entrypoints:
 
-## Repository Guide
+- `docs/PROJECT_OVERVIEW.md`
+- `docs/DATASET_POLICY.md`
+- `docs/STAGING_AND_HPC.md`
+- `docs/EASY_Project_Progress_Report.md`
+- `notebooks/EASY_Project_Progress_Report.ipynb`
 
-Use these files as the only active project documentation:
-- `docs/PROJECT_OVERVIEW.md` — project vision, current status, roadmap
-- `docs/DATASET_POLICY.md` — taxonomy, official datasets, mapping and dataset decisions
-- `docs/STAGING_AND_HPC.md` — staging rules, storage layout, SLURM/HPC workflow
-- `docs/INTERMEDIATE_AND_YOLO_FORMATS.md` — intermediate record format and YOLO export behavior
+The class schema remains defined in:
 
-The single source of truth for class IDs and mappings is:
 - `configs/dataset_schema.yaml`
 
-## Repository Structure
+## Active Dataset
+
+The only active processed dataset in this repository is:
+
+- `data/processed/EASY-v0-rgb3-balanced-v2/dataset.yaml`
+
+This is the current RGB baseline reference and the only dataset that should be treated as operational in the cleaned repository state.
+
+## Active Workflow
+
+1. Use the existing `balanced-v2` dataset.
+2. Launch training with:
+   - `scripts/slurm/train_rgb3_balanced_v2_yolov8n.sbatch`
+3. Run validation and report generation through the same balanced-v2 workflow.
+4. Use the current reports and notebook for review and discussion.
+
+## Repository Layout
 
 ```text
 easy-maritime-awareness/
-├── configs/        # Canonical configuration and taxonomy
-├── docs/           # Active canonical docs
-├── scripts/        # Minimal operational helpers and SLURM jobs
-├── src/            # Dataset-core code only
-├── tests/          # Automated tests
-├── data/           # Canonical dataset workspace for this repository
-├── outputs/        # Local outputs only (ignored / non-canonical)
-└── models/         # Local model artifacts only (ignored / non-canonical)
+├── configs/
+├── docs/
+├── notebooks/
+├── scripts/
+│   └── slurm/
+├── src/
+├── tests/            # may be empty or minimal after cleanup
+├── data/
+│   ├── raw/
+│   └── processed/
+├── outputs/
+├── archive/
+└── models/
 ```
 
-## Working Rules
+## Local-Only Areas
 
-- use `data/` in this repository as the default dataset root
-- use `EASY_DATA_ROOT` only when you intentionally want to override that default
-- treat `outputs/` and `models/` as local artifacts, not as part of the canonical repository surface
-- use the frontend/login node only for lightweight validation and job preparation
-- use SLURM for heavy staging, extraction, parsing, conversion, and training
-- SLURM logs must live under `outputs/logs/<job-name>/`
-- do not redefine taxonomy or class IDs outside `configs/dataset_schema.yaml`
+These directories are local working areas and are not part of the Git-tracked project surface:
 
-## Typical Workflow
+- `data/`
+- `outputs/`
+- `models/`
+- `archive/`
+- `venv/`
 
-1. Inspect official dataset policy
-2. Stage source datasets in a controlled way
-3. Convert raw annotations into intermediate records
-4. Export YOLO-ready labels and dataset structure
-5. Build and validate the merged `EASY-v0` dataset
-6. Run baseline training via SLURM
+## Notes
 
-## Notes on Archived Material
-
-Historical documentation and removed non-core code should be recovered from Git history if ever needed.
+- `data/raw/` is intentionally untouched by cleanup operations.
+- archived material should be recovered from `archive/` rather than reconstructed from the active repo surface.
+- the repository no longer treats `EASY-v0`, `rgb3`, `clean`, or `balanced-v1` as active datasets.
