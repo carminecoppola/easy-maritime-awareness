@@ -21,6 +21,7 @@
 *.err
 *.log
 logs/
+/archive/
 
 # Large media generated locally
 *.mp4
@@ -79,3 +80,8 @@ Thumbs.db
 .coverage
 htmlcov/
 .cache/
+.ruff_cache/
+.mypy_cache/
+.nox/
+.tox/
+.hypothesis/

@@ -2,64 +2,54 @@
 
 ## Purpose
 
-`EASY` (`Environmental Awareness by the Sea and beYond`) is a maritime perception project designed to build a reproducible foundation for RGB and thermal object understanding in marine scenes.
+EASY (`Environmental Awareness by the Sea and beYond`) is a maritime perception project. In the current cleaned repository state, the active focus is a single RGB baseline workflow built around the `balanced-v2` split.
 
-The current repository focuses on the **data pipeline layer** needed before and around baseline training:
-- source dataset selection
-- taxonomy freezing
-- controlled raw staging
-- intermediate normalization
-- YOLO export and merged dataset build
-- HPC-safe orchestration
-- validation of dataset readiness
+## Current Active Scope
+
+The repository now keeps only one operational dataset path:
+
+- `data/processed/EASY-v0-rgb3-balanced-v2`
+
+The active workflow includes:
+
+- balanced-v2 baseline training
+- balanced-v2 validation
+- balanced-v2 report generation
+- sequence-level analysis
+- boat-vs-buoy error analysis
 
 ## Current Status
 
-Current state of implementation:
-- canonical taxonomy is frozen
-- official source datasets are selected
-- lightweight staging utilities exist
-- SMD parsing and controlled staging are implemented
-- YOLO export is implemented
-- the local merged RGB dataset `data/processed/EASY-v0` is available
-- a minimal baseline training entrypoint and SLURM job are available
-- an initial CPU smoke training run has been completed
-- GPU training is currently blocked by a CUDA/PyTorch compatibility mismatch on the cluster
+- the taxonomy remains frozen in `configs/dataset_schema.yaml`
+- the repository surface has been reduced to the balanced-v2 RGB workflow
+- superseded datasets, scripts, reports, and SLURM jobs have been archived locally
+- the official notebook and markdown progress report remain available for review
 
-## Official Scope Right Now
+## What Is No Longer Active
 
-Mandatory current scope:
-- maritime object detection dataset preparation
-- RGB-first pipeline with thermal companion support
-- reproducible storage and staging policy
-- compatibility with HPC execution and later embedded deployment
+These are no longer part of the active repository workflow:
 
-Not yet in active operational scope:
-- production-scale training campaigns
-- segmentation-first workflows
-- tracking-first workflows
-- full multimodal fusion
-- embedded deployment packaging
+- `EASY-v0` as a canonical training dataset
+- `EASY-v0-rgb3`
+- `EASY-v0-rgb3-clean`
+- `EASY-v0-rgb3-balanced`
+- MassMIND as an active processed dataset path in this repo state
 
-## Roadmap Direction
+They may still exist in `archive/` for local recovery, but they are not part of the current operating surface.
 
-Near-term direction:
-1. keep staged official datasets validated and reproducible
-2. maintain normalized intermediate records and YOLO exports
-3. validate merged EASY-v0 structure after data changes
-4. fix cluster GPU runtime compatibility
-5. run the first real GPU baseline training campaign
+## Operational Interpretation
 
-## Repository Interpretation
+This repository should now be read as:
 
-This repository should be read primarily as:
-- a **dataset engineering repository**
-- a **policy and orchestration repository**
-- a **dataset-first baseline training repository**
+- a cleaned balanced-v2 RGB baseline repository
+- a lightweight training/evaluation repository
+- a review-ready project snapshot for the current EASY phase
 
-It should not currently be interpreted as a finished benchmark release or a completed training pipeline.
+## Near-Term Direction
 
-## Repository Boundary
+Near-term work should stay aligned with the balanced-v2 baseline:
 
-This repository intentionally keeps only a minimal training surface.
-Large training stacks, inference systems, and visualization frameworks are still outside the active core.
+1. maintain the active balanced-v2 dataset
+2. rerun or extend the current YOLOv8n baseline when needed
+3. use the current notebook/report for project communication
+4. keep additional historical or experimental material out of the active repo surface
