@@ -1,74 +1,88 @@
 # EASY — Environmental Awareness by the Sea and beYond
 
-EASY is a maritime perception repository currently focused on one active RGB workflow:
+EASY is a maritime RGB perception project for detecting:
 
-- active dataset: `data/processed/EASY-v0-rgb3-balanced-v2`
-- active training surface: `YOLOv8n` baseline on `balanced-v2`
-- active analysis surface: balanced-v2 evaluation, sequence distribution, and boat-vs-buoy forensic analysis
+- `boat`
+- `ship`
+- `buoy`
 
-Historical datasets, scripts, SLURM jobs, and reports have been archived locally under `archive/`.
+The repository is now frozen around one official baseline:
 
-## Active Repository Surface
+`data/processed/EASY-v1-rgb3-buoy-rebalanced`
 
-Keep these files as the canonical project entrypoints:
+Dataset iteration is closed. EASY-v2 and EASY-v2.1 were useful methodological experiments, but they are not official baselines.
 
-- `docs/PROJECT_OVERVIEW.md`
-- `docs/DATASET_POLICY.md`
-- `docs/STAGING_AND_HPC.md`
-- `docs/EASY_Project_Progress_Report.md`
-- `notebooks/EASY_Project_Progress_Report.ipynb`
+## Current Status
 
-The class schema remains defined in:
+| Item | Status |
+| --- | --- |
+| Official baseline | `EASY-v1-rgb3-buoy-rebalanced` |
+| Active model family | YOLOv8n |
+| Active dataset branch | Closed |
+| EASY-v2 / EASY-v2.1 | Archived methodological experiments |
+| Recommended next work | Final report/presentation using EASY-v1 |
 
-- `configs/dataset_schema.yaml`
+## Key Results
 
-## Active Dataset
+EASY-v1 test metrics:
 
-The only active processed dataset in this repository is:
+| Metric | Value |
+| --- | ---: |
+| Precision | 0.91463 |
+| Recall | 0.91807 |
+| mAP50 | 0.94207 |
+| mAP50-95 | 0.70694 |
 
-- `data/processed/EASY-v0-rgb3-balanced-v2/dataset.yaml`
+Per class:
 
-This is the current RGB baseline reference and the only dataset that should be treated as operational in the cleaned repository state.
+| Class | Precision | Recall | mAP50 | mAP50-95 |
+| --- | ---: | ---: | ---: | ---: |
+| boat | 0.92449 | 0.87524 | 0.93927 | 0.67771 |
+| ship | 0.82078 | 0.87897 | 0.89195 | 0.61534 |
+| buoy | 0.99862 | 1.00000 | 0.99500 | 0.82777 |
 
-## Active Workflow
+## Canonical Documentation
 
-1. Use the existing `balanced-v2` dataset.
-2. Launch training with:
-   - `scripts/slurm/train_rgb3_balanced_v2_yolov8n.sbatch`
-3. Run validation and report generation through the same balanced-v2 workflow.
-4. Use the current reports and notebook for review and discussion.
+Only three documents should be needed to understand the active project:
 
-## Repository Layout
+- `docs/DATASET.md` — dataset structure, classes, baseline status, and dataset-iteration conclusion
+- `docs/TRAINING_AND_EXPERIMENT_RESULTS.md` — training results and experiment history
+- `docs/EXECUTION_PLAN.md` — current phase, rules, and next actions
+
+Final reports are kept in:
+
+- `outputs/reports/easy_dataset_iteration_closure.md`
+- `outputs/reports/easy_v1_test_evaluation.md`
+- `outputs/reports/easy_v1_buoy_rebalanced_report.md`
+- `outputs/reports/repository_final_cleanup_report.md`
+
+## Active Repository Shape
 
 ```text
-easy-maritime-awareness/
-├── configs/
-├── docs/
-├── notebooks/
-├── scripts/
-│   └── slurm/
-├── src/
-├── tests/            # may be empty or minimal after cleanup
-├── data/
-│   ├── raw/
-│   └── processed/
-├── outputs/
-├── archive/
-└── models/
+configs/
+data/
+  raw/
+  processed/
+    EASY-v1-rgb3-buoy-rebalanced/
+docs/
+models/
+outputs/
+  experiments/
+    easy_v1_buoy_rebalanced/
+  reports/
+scripts/
+src/
+archive/
 ```
 
-## Local-Only Areas
+## Rules
 
-These directories are local working areas and are not part of the Git-tracked project surface:
+- Do not modify `data/processed/EASY-v1-rgb3-buoy-rebalanced`.
+- Do not modify EASY-v1 weights or reported metrics.
+- Do not restart EASY-v2 split iteration.
+- Treat EASY-v2 and EASY-v2.1 as archived evidence only.
+- Attempt EASY-v3 only if genuinely new buoy/boat data becomes available.
 
-- `data/`
-- `outputs/`
-- `models/`
-- `archive/`
-- `venv/`
+## One-Minute Summary
 
-## Notes
-
-- `data/raw/` is intentionally untouched by cleanup operations.
-- archived material should be recovered from `archive/` rather than reconstructed from the active repo surface.
-- the repository no longer treats `EASY-v0`, `rgb3`, `clean`, or `balanced-v1` as active datasets.
+EASY-v0 failed mainly because of dataset composition. EASY-v1 fixed the buoy collapse and became the strongest reproducible baseline. EASY-v2 removed sequence leakage but failed on test generalization. EASY-v2.1 added buoy-aware constraints but still failed. Therefore, EASY-v1 remains the final official baseline and dataset iteration stops here.
