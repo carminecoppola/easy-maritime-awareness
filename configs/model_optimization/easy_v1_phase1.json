@@ -1,0 +1,137 @@
+{
+  "phase_name": "EASY-v1 RGB Phase 1 Optimization",
+  "seed": 42,
+  "deterministic": true,
+  "dataset": {
+    "root": "data/processed/EASY-v1-rgb3-buoy-rebalanced",
+    "dataset_yaml": "data/processed/EASY-v1-rgb3-buoy-rebalanced/dataset.yaml",
+    "splits": [
+      "train",
+      "val",
+      "test"
+    ],
+    "class_names": [
+      "boat",
+      "ship",
+      "buoy"
+    ],
+    "image_extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png"
+    ],
+    "ignored_extensions": [
+      ".npy"
+    ]
+  },
+  "baseline": {
+    "name": "yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced",
+    "weights": "outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced/weights/best.pt",
+    "project_dir": "outputs/experiments/easy_v1_buoy_rebalanced",
+    "historical_val_metrics": "outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced_val/metrics_summary.json",
+    "historical_test_metrics": "outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced_test/metrics_summary.json",
+    "historical_val_predictions": "outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced_val/predictions.json"
+  },
+  "phase1_runs": {
+    "project_dir": "outputs/experiments/easy_v1_rgb_phase1",
+    "baseline_eval_name": "easy_v1_rgb_phase1_baseline",
+    "final_model_path": "models/easy_v1_best_rgb.pt",
+    "final_onnx_path": "models/easy_v1_best_rgb.onnx"
+  },
+  "runtime_requirements": {
+    "preferred_python": "archive/easy_v1_legacy_backup/root/venv/bin/python",
+    "python_min": [
+      3,
+      9
+    ],
+    "modules": [
+      "torch",
+      "ultralytics",
+      "onnx"
+    ],
+    "require_cuda": true,
+    "required_pretrained_weights": [
+      "models/pretrained/yolov8s.pt"
+    ]
+  },
+  "evaluation": {
+    "match_iou": 0.5,
+    "boat_buoy_confusion_iou": 0.1,
+    "low_confidence_threshold": 0.35,
+    "difficult_small_object_area_ratio": 0.01
+  },
+  "experiments": [
+    {
+      "id": "A",
+      "run_name": "easy_v1_rgb_phase1_exp_a_yolov8s_640",
+      "model": "yolov8s",
+      "imgsz": 640,
+      "epochs": 50,
+      "patience": 20,
+      "cache": "disk",
+      "deterministic": true,
+      "notes": "Baseline-style augmentation close to the official YOLOv8n run."
+    },
+    {
+      "id": "B",
+      "run_name": "easy_v1_rgb_phase1_exp_b_yolov8s_960",
+      "model": "yolov8s",
+      "imgsz": 960,
+      "epochs": 50,
+      "patience": 20,
+      "cache": "disk",
+      "deterministic": true,
+      "notes": "Higher resolution for small-object sensitivity, especially buoy."
+    },
+    {
+      "id": "C",
+      "run_name": "easy_v1_rgb_phase1_exp_c_yolov8s_640_maritime_aug",
+      "model": "yolov8s",
+      "imgsz": 640,
+      "epochs": 50,
+      "patience": 20,
+      "cache": "disk",
+      "deterministic": true,
+      "notes": "Controlled maritime augmentation with reduced aggressive transforms.",
+      "augmentations": {
+        "hsv_h": 0.01,
+        "hsv_s": 0.35,
+        "hsv_v": 0.2,
+        "translate": 0.05,
+        "scale": 0.2,
+        "mosaic": 0.2,
+        "close_mosaic": 20,
+        "erasing": 0.0,
+        "mixup": 0.0,
+        "cutmix": 0.0,
+        "perspective": 0.0,
+        "degrees": 0.0,
+        "shear": 0.0,
+        "flipud": 0.0,
+        "fliplr": 0.5,
+        "auto_augment": "none"
+      }
+    }
+  ],
+  "outputs": {
+    "dataset_report": "docs/model_optimization/easy_v1_dataset_status.md",
+    "runtime_report": "docs/model_optimization/easy_v1_runtime_status.md",
+    "baseline_report": "outputs/reports/easy_v1_baseline_full_evaluation.md",
+    "comparison_report": "docs/model_optimization/easy_v1_experiment_comparison.md",
+    "selection_report": "docs/model_optimization/easy_v1_model_selection.md",
+    "deployment_notes": "docs/model_optimization/deployment_notes.md",
+    "command_log": "outputs/reports/phase1_artifacts/easy_v1_phase1_command_log.md",
+    "runtime_json": "outputs/reports/phase1_artifacts/easy_v1_runtime_status.json",
+    "dataset_json": "outputs/reports/phase1_artifacts/easy_v1_dataset_status.json",
+    "error_analysis_root": "outputs/error_analysis/easy_v1_baseline"
+  },
+  "slurm": {
+    "job_dir": "outputs/slurm/easy_v1_phase1",
+    "logs_dir": "outputs/slurm/easy_v1_phase1/logs",
+    "partition": "low-gn",
+    "gres": "gpu:1",
+    "time": "36:00:00",
+    "cpus_per_task": 8,
+    "mem": "32G"
+  }
+}

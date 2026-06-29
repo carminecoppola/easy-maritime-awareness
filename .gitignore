@@ -14,9 +14,16 @@
 *.onnx
 *.engine
 *.tflite
+!models/easy_v1_best_rgb.pt
+!models/easy_v1_best_rgb.onnx
 
 # Runtime outputs
 /outputs/
+!/outputs/
+/outputs/*
+!/outputs/reports/
+/outputs/reports/*
+!/outputs/reports/*.md
 *.out
 *.err
 *.log
