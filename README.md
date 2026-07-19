@@ -86,3 +86,21 @@ archive/
 ## One-Minute Summary
 
 EASY-v0 failed mainly because of dataset composition. EASY-v1 fixed the buoy collapse and became the strongest reproducible baseline. EASY-v2 removed sequence leakage but failed on test generalization. EASY-v2.1 added buoy-aware constraints but still failed. Therefore, EASY-v1 remains the final official baseline and dataset iteration stops here.
+
+## Reproducibility
+
+`requirements.txt` declares the supported dependency ranges for development.
+An exact environment export, configuration files, model checksums and the
+evaluation outputs used in a publication should be preserved together in its
+versioned research artifact. Reported metrics must always be associated with
+the frozen EASY-v1 baseline and must not be silently regenerated from a later
+dataset state.
+
+## License
+
+Repository code and original documentation are distributed under the BSD
+3-Clause License; see [`LICENSE`](LICENSE). This license does not relicense
+third-party datasets, images, annotations or pretrained components. Their
+original licenses, access conditions and citation requirements continue to
+apply. Model weights may be redistributed only when their training sources and
+upstream framework terms permit it.

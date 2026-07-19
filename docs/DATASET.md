@@ -88,6 +88,15 @@ Removing leakage made the benchmark stricter, but the currently available intern
 - Raw sources in `data/raw/` are preserved for traceability.
 - Archived v2/v2.1 materials are under `archive/cleanup_20260620_repo_reset/`.
 
+## Licensing and Provenance
+
+The repository's BSD 3-Clause License covers the original software and
+documentation only. It does not grant new rights over source datasets, images,
+annotations or pretrained assets. Every future dataset release must retain the
+source name, access conditions, original license and required citation for each
+contributing collection. A file may be included in a distributable dataset only
+when its original terms permit that use.
+
 ## Future Dataset Work
 
 Only attempt a future EASY-v3 if genuinely new, legally usable data becomes available.
