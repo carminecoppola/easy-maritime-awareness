@@ -8,9 +8,12 @@ version = "0.1.0"
 description = "EASY dataset-core repository for maritime dataset staging and YOLO export"
 readme = "README.md"
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = {text = "BSD-3-Clause"}
 authors = [{name = "EASY Team"}]
 keywords = ["maritime", "dataset", "object-detection", "yolo", "staging"]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+]
 
 dependencies = [
     "numpy>=1.23.0",

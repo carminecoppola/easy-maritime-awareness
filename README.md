@@ -148,7 +148,6 @@ deployed). On real open water (MODD2), even the best model detects only
 3.87% of obstacles — public data does not cover that domain. A proprietary
 acquisition campaign is specified in `docs/proprietary_acquisition_spec.md`
 as the next step.
-
 ## Reproducibility
 
 `requirements.txt` declares the supported dependency ranges for development.
@@ -158,7 +157,6 @@ versioned research artifact. Metrics reported for `EASY-v1-rgb3-buoy-rebalanced`
 are associated with that frozen, leakage-affected baseline only and must not
 be quoted as current performance; see "Current Models" above for what is
 actually running and what is the best available candidate.
-
 ## License
 
 Repository code and original documentation are distributed under the BSD
