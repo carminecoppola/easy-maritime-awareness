@@ -1,0 +1,1041 @@
+{
+  "generated_at": "2026-09-08T09:02:23.514200+00:00",
+  "weights": "outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced/weights/best.pt",
+  "images_dir": "data/external_validation/non_maritime_fp_v1/images",
+  "num_images": 124,
+  "conf_threshold": 0.25,
+  "low_conf_threshold": 0.1,
+  "summary": {
+    "images_with_false_positive_at_conf": 21,
+    "false_positive_image_rate_at_conf": 0.1694,
+    "total_false_positive_detections_at_conf": 26,
+    "images_with_any_detection_at_low_conf": 38,
+    "false_positive_image_rate_at_low_conf": 0.3065,
+    "total_detections_at_low_conf": 59,
+    "per_class_false_positives_at_conf": {
+      "boat": 0,
+      "ship": 26,
+      "buoy": 0
+    }
+  },
+  "per_image": [
+    {
+      "image": "000000000009.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000025.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.2349
+        }
+      ]
+    },
+    {
+      "image": "000000000030.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000034.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1383
+        }
+      ]
+    },
+    {
+      "image": "000000000036.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.2404
+        }
+      ]
+    },
+    {
+      "image": "000000000042.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000049.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000061.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000064.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000071.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1401
+        }
+      ]
+    },
+    {
+      "image": "000000000072.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000073.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000074.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.351
+        }
+      ]
+    },
+    {
+      "image": "000000000077.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000078.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000081.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000086.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000089.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000092.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000094.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1751
+        }
+      ]
+    },
+    {
+      "image": "000000000109.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1197
+        }
+      ]
+    },
+    {
+      "image": "000000000110.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000113.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000127.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000133.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1822
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1044
+        }
+      ]
+    },
+    {
+      "image": "000000000136.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1831
+        }
+      ]
+    },
+    {
+      "image": "000000000138.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.3046
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1999
+        }
+      ]
+    },
+    {
+      "image": "000000000142.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.538
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1035
+        }
+      ]
+    },
+    {
+      "image": "000000000143.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000144.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000149.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "buoy",
+          "confidence": 0.1347
+        }
+      ]
+    },
+    {
+      "image": "000000000151.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000154.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000164.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000165.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000192.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000194.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000196.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000201.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000208.jpg",
+      "detections_at_conf": 4,
+      "detections_at_low_conf": 5,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.6089
+        },
+        {
+          "class": "ship",
+          "confidence": 0.6004
+        },
+        {
+          "class": "ship",
+          "confidence": 0.5707
+        },
+        {
+          "class": "ship",
+          "confidence": 0.5124
+        },
+        {
+          "class": "boat",
+          "confidence": 0.1056
+        }
+      ]
+    },
+    {
+      "image": "000000000241.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000247.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000257.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000260.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 3,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.2049
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1927
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1412
+        }
+      ]
+    },
+    {
+      "image": "000000000263.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000283.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000294.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1043
+        }
+      ]
+    },
+    {
+      "image": "000000000307.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000308.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000309.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000312.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000315.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000321.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000322.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000326.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000328.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000332.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5778
+        }
+      ]
+    },
+    {
+      "image": "000000000338.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000349.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.2123
+        }
+      ]
+    },
+    {
+      "image": "000000000357.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 3,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.308
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1796
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1133
+        }
+      ]
+    },
+    {
+      "image": "000000000359.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000360.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000368.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000370.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000382.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000384.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000387.jpg",
+      "detections_at_conf": 2,
+      "detections_at_low_conf": 3,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.619
+        },
+        {
+          "class": "ship",
+          "confidence": 0.457
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1024
+        }
+      ]
+    },
+    {
+      "image": "000000000389.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000394.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000395.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.6586
+        }
+      ]
+    },
+    {
+      "image": "000000000397.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000415.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000419.jpg",
+      "detections_at_conf": 2,
+      "detections_at_low_conf": 4,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.694
+        },
+        {
+          "class": "ship",
+          "confidence": 0.3876
+        },
+        {
+          "class": "ship",
+          "confidence": 0.2386
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1237
+        }
+      ]
+    },
+    {
+      "image": "000000000428.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000431.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.6933
+        }
+      ]
+    },
+    {
+      "image": "000000000436.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000438.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000443.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000446.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000450.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "boat",
+          "confidence": 0.2238
+        }
+      ]
+    },
+    {
+      "image": "000000000459.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000471.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000472.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000474.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1764
+        }
+      ]
+    },
+    {
+      "image": "000000000486.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1648
+        }
+      ]
+    },
+    {
+      "image": "000000000488.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.3325
+        }
+      ]
+    },
+    {
+      "image": "000000000490.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000491.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000502.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000510.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000514.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.8308
+        }
+      ]
+    },
+    {
+      "image": "000000000520.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5686
+        }
+      ]
+    },
+    {
+      "image": "000000000529.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000531.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000532.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 3,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5279
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1932
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1069
+        }
+      ]
+    },
+    {
+      "image": "000000000536.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000540.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5664
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1233
+        }
+      ]
+    },
+    {
+      "image": "000000000542.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000544.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000560.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000562.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000564.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.2613
+        },
+        {
+          "class": "ship",
+          "confidence": 0.1145
+        }
+      ]
+    },
+    {
+      "image": "000000000569.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000572.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5718
+        }
+      ]
+    },
+    {
+      "image": "000000000575.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000581.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000584.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.3375
+        }
+      ]
+    },
+    {
+      "image": "000000000589.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000590.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.1129
+        }
+      ]
+    },
+    {
+      "image": "000000000595.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000597.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000599.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.3178
+        }
+      ]
+    },
+    {
+      "image": "000000000605.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000612.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000620.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000623.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000625.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000626.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000629.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000634.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.3505
+        }
+      ]
+    },
+    {
+      "image": "000000000636.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000641.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 2,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.231
+        },
+        {
+          "class": "ship",
+          "confidence": 0.173
+        }
+      ]
+    },
+    {
+      "image": "000000000643.jpg",
+      "detections_at_conf": 0,
+      "detections_at_low_conf": 0,
+      "boxes_at_low_conf": []
+    },
+    {
+      "image": "000000000650.jpg",
+      "detections_at_conf": 1,
+      "detections_at_low_conf": 1,
+      "boxes_at_low_conf": [
+        {
+          "class": "ship",
+          "confidence": 0.5178
+        }
+      ]
+    }
+  ]
+}

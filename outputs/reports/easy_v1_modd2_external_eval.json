@@ -1,0 +1,4366 @@
+{
+  "generated_at": "2026-09-08T09:15:59.011896+00:00",
+  "weights": "/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced/weights/best.pt",
+  "dataset": "MODD2 (ViCoS, Univ. of Ljubljana) - campione class-agnostic",
+  "conf_threshold": 0.25,
+  "iou_match_threshold": 0.3,
+  "num_frames_evaluated": 454,
+  "note": "Valutazione class-agnostic: MODD2 in questo formato non distingue boat/ship/buoy, quindi ogni detection EASY (di qualsiasi classe) che matcha in IoU un box MODD2 e' contata come vero positivo object-level. Non comparabile direttamente al mAP per-classe del test set interno.",
+  "summary": {
+    "total_ground_truth_obstacles": 956,
+    "total_detections": 66,
+    "matched_ground_truth": 10,
+    "matched_detections": 10,
+    "object_level_recall_class_agnostic": 0.0105,
+    "object_level_precision_class_agnostic": 0.1515
+  },
+  "per_image": [
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004525L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1060.3482666015625,
+            742.8406372070312,
+            217.6517333984375,
+            215.15936279296875
+          ],
+          "class": "ship",
+          "confidence": 0.4965331554412842
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004550L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            983.6171875,
+            555.8657836914062,
+            294.2786865234375,
+            215.96844482421875
+          ],
+          "class": "ship",
+          "confidence": 0.3074035048484802
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004575L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004600L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004625L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004650L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004675L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004700L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1060.5845947265625,
+            349.56268310546875,
+            216.83447265625,
+            291.7027587890625
+          ],
+          "class": "ship",
+          "confidence": 0.5936194658279419
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004725L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004750L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004775L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004800L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004825L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004850L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004875L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004900L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004925L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004950L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004975L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005000L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005025L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005050L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025225L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025250L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025275L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025300L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025325L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025350L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            0.8124797344207764,
+            472.5461120605469,
+            318.8136188983917,
+            282.1600036621094
+          ],
+          "class": "ship",
+          "confidence": 0.2675362527370453
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025375L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025400L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025425L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025450L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025475L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025500L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.4759092628955841,
+            551.5116577148438,
+            282.92866227030754,
+            161.5450439453125
+          ],
+          "class": "ship",
+          "confidence": 0.35804370045661926
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025525L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.11817748099565506,
+            539.6981201171875,
+            238.1163806244731,
+            190.466796875
+          ],
+          "class": "ship",
+          "confidence": 0.31723979115486145
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025550L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025575L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025600L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025625L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025650L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027425L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027450L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027475L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027500L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027525L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027550L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027575L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027600L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027625L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027650L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00040975L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041000L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041025L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041050L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041075L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041100L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041125L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041150L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041175L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060586L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060611L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060636L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060661L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060686L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060711L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060736L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060761L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060786L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060811L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060836L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060861L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060886L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060911L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060936L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060961L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060986L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061011L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061036L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061061L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061086L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061111L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061136L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061161L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061186L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061211L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061236L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061261L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061286L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061311L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061336L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061361L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061386L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061411L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061436L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061461L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061876L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061901L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061926L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061951L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061976L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062001L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062026L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062051L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062076L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062101L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062126L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062151L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062176L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            873.8950805664062,
+            419.2309265136719,
+            395.62225341796875,
+            101.83975219726562
+          ],
+          "class": "ship",
+          "confidence": 0.43579402565956116
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062201L.mat",
+      "num_gt": 7,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            876.7198486328125,
+            419.0340270996094,
+            397.5439453125,
+            113.00515747070312
+          ],
+          "class": "ship",
+          "confidence": 0.41323941946029663
+        },
+        {
+          "xywh": [
+            874.6170043945312,
+            419.0778503417969,
+            401.92913818359375,
+            174.61172485351562
+          ],
+          "class": "ship",
+          "confidence": 0.3043528199195862
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062226L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062251L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062276L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062301L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062326L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062351L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062376L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062401L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062426L.mat",
+      "num_gt": 9,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062451L.mat",
+      "num_gt": 10,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062476L.mat",
+      "num_gt": 9,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            953.1981811523438,
+            389.30718994140625,
+            324.67449951171875,
+            127.739013671875
+          ],
+          "class": "ship",
+          "confidence": 0.37666812539100647
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062501L.mat",
+      "num_gt": 8,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062526L.mat",
+      "num_gt": 8,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062551L.mat",
+      "num_gt": 8,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062576L.mat",
+      "num_gt": 8,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062601L.mat",
+      "num_gt": 9,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062626L.mat",
+      "num_gt": 9,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062651L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062696L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062721L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062746L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062771L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062796L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062821L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062846L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062871L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062896L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062921L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062946L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062971L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062996L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063021L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063046L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063071L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1120.3487548828125,
+            418.2189636230469,
+            157.40576171875,
+            178.22097778320312
+          ],
+          "class": "ship",
+          "confidence": 0.5032258033752441
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063096L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063121L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063146L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063171L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.015318739227950573,
+            517.2477416992188,
+            19.56170762795955,
+            101.99053955078125
+          ],
+          "class": "buoy",
+          "confidence": 0.4122371971607208
+        }
+      ]
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063196L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063221L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063246L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063271L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063296L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063321L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063346L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063371L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063396L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063421L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063446L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067297L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067322L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067347L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067372L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067397L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067422L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067447L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067472L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067497L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067522L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067547L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067572L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067597L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067622L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067647L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067672L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067697L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067722L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067747L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067772L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067797L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067822L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067847L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067872L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067897L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067922L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074457L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074482L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074507L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074532L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074557L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074582L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074607L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011235L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011260L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011285L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011310L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011545L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011570L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011595L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011620L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011645L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011670L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011695L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011720L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011745L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011770L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011795L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011825L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011850L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011875L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011900L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011925L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011950L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011975L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00012000L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014362L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014387L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014412L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014437L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014462L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014487L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014512L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014537L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017675L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.0,
+            566.0546875,
+            41.40620040893555,
+            53.191162109375
+          ],
+          "class": "buoy",
+          "confidence": 0.2580169439315796
+        }
+      ]
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017700L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017725L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017750L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017775L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017800L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017825L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013805L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            0.3229808807373047,
+            613.2921752929688,
+            182.19473457336426,
+            129.29132080078125
+          ],
+          "class": "ship",
+          "confidence": 0.7090345621109009
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013830L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013855L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013880L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013905L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013930L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013955L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013980L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            920.484130859375,
+            447.378662109375,
+            108.5350341796875,
+            48.31500244140625
+          ],
+          "class": "boat",
+          "confidence": 0.6712967753410339
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014005L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            827.6671142578125,
+            480.8164367675781,
+            110.63250732421875,
+            49.026275634765625
+          ],
+          "class": "boat",
+          "confidence": 0.5620088577270508
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014030L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            722.1219482421875,
+            480.92022705078125,
+            115.64788818359375,
+            46.60870361328125
+          ],
+          "class": "boat",
+          "confidence": 0.4948055148124695
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014055L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014080L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014105L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            363.602294921875,
+            461.7916564941406,
+            159.0550537109375,
+            75.24050903320312
+          ],
+          "class": "boat",
+          "confidence": 0.2766711413860321
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014130L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014155L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014180L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021525L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021550L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021575L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021600L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021625L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021650L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021675L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021700L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021725L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021750L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021775L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021800L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021825L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021850L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021875L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021900L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021925L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021950L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021975L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022000L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022025L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022050L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022075L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            42.7635498046875,
+            514.7974853515625,
+            133.98275756835938,
+            61.43341064453125
+          ],
+          "class": "boat",
+          "confidence": 0.8358160853385925
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022100L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            737.4430541992188,
+            489.19049072265625,
+            107.40203857421875,
+            52.5760498046875
+          ],
+          "class": "boat",
+          "confidence": 0.8282937407493591
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022125L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1024.9866943359375,
+            473.2423095703125,
+            137.2447509765625,
+            62.0015869140625
+          ],
+          "class": "boat",
+          "confidence": 0.7923953533172607
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022150L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037575L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037600L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037625L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037650L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037675L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037700L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037725L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037750L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037775L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037800L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037825L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037850L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062225L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062250L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            652.235107421875,
+            392.26007080078125,
+            622.592529296875,
+            142.16729736328125
+          ],
+          "class": "ship",
+          "confidence": 0.43352437019348145
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062275L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062300L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.0,
+            481.84619140625,
+            248.58712768554688,
+            119.24224853515625
+          ],
+          "class": "ship",
+          "confidence": 0.5018070340156555
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062325L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062350L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062375L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            2.698748826980591,
+            424.7732238769531,
+            265.99378657341003,
+            117.11508178710938
+          ],
+          "class": "ship",
+          "confidence": 0.5354093909263611
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062400L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062425L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.3316648006439209,
+            518.7855224609375,
+            274.9383547306061,
+            132.1337890625
+          ],
+          "class": "ship",
+          "confidence": 0.359200656414032
+        }
+      ]
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062450L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062475L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062500L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            574.4330444335938,
+            417.3252868652344,
+            226.16876220703125,
+            124.32363891601562
+          ],
+          "class": "ship",
+          "confidence": 0.3389112651348114
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000585L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000610L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000635L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000660L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000685L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000710L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000735L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1096.89794921875,
+            504.5184326171875,
+            180.9356689453125,
+            124.404296875
+          ],
+          "class": "ship",
+          "confidence": 0.3345302939414978
+        },
+        {
+          "xywh": [
+            1095.576904296875,
+            574.5672607421875,
+            182.423095703125,
+            53.67333984375
+          ],
+          "class": "ship",
+          "confidence": 0.28850042819976807
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000760L.mat",
+      "num_gt": 1,
+      "num_det": 3,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            995.6729736328125,
+            458.0892333984375,
+            248.715087890625,
+            151.8125
+          ],
+          "class": "ship",
+          "confidence": 0.46530357003211975
+        },
+        {
+          "xywh": [
+            994.90673828125,
+            462.4697265625,
+            146.5999755859375,
+            146.69329833984375
+          ],
+          "class": "ship",
+          "confidence": 0.29151463508605957
+        },
+        {
+          "xywh": [
+            1104.19091796875,
+            457.7013244628906,
+            159.6993408203125,
+            153.39187622070312
+          ],
+          "class": "ship",
+          "confidence": 0.2554960548877716
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000785L.mat",
+      "num_gt": 0,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            869.1602783203125,
+            465.5280456542969,
+            169.639892578125,
+            146.35897827148438
+          ],
+          "class": "ship",
+          "confidence": 0.6092298626899719
+        },
+        {
+          "xywh": [
+            4.098627090454102,
+            187.2051239013672,
+            846.0476741790771,
+            241.3918914794922
+          ],
+          "class": "ship",
+          "confidence": 0.2817685902118683
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000810L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            962.3766479492188,
+            466.17889404296875,
+            262.26055908203125,
+            156.96575927734375
+          ],
+          "class": "ship",
+          "confidence": 0.5335389375686646
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000835L.mat",
+      "num_gt": 0,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            975.1307983398438,
+            294.1625061035156,
+            302.64764404296875,
+            384.9939270019531
+          ],
+          "class": "ship",
+          "confidence": 0.4546986520290375
+        },
+        {
+          "xywh": [
+            981.9999389648438,
+            441.3681945800781,
+            295.72979736328125,
+            233.43966674804688
+          ],
+          "class": "ship",
+          "confidence": 0.3953465223312378
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000860L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000885L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            894.7603759765625,
+            460.8518981933594,
+            380.8790283203125,
+            147.60360717773438
+          ],
+          "class": "ship",
+          "confidence": 0.4235934317111969
+        },
+        {
+          "xywh": [
+            892.185546875,
+            344.7393493652344,
+            383.916748046875,
+            264.9535217285156
+          ],
+          "class": "ship",
+          "confidence": 0.3484400510787964
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000910L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1117.488525390625,
+            471.4339904785156,
+            159.8636474609375,
+            148.63552856445312
+          ],
+          "class": "ship",
+          "confidence": 0.40692535042762756
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000935L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1197.310302734375,
+            482.6966247558594,
+            80.4376220703125,
+            133.19107055664062
+          ],
+          "class": "ship",
+          "confidence": 0.3862674832344055
+        },
+        {
+          "xywh": [
+            1195.15283203125,
+            417.0213928222656,
+            82.84716796875,
+            199.17849731445312
+          ],
+          "class": "boat",
+          "confidence": 0.2925797700881958
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000960L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000985L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001010L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001035L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001060L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004355L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004380L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004405L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004430L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004455L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004480L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004505L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004530L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004555L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            314.4449157714844,
+            537.03076171875,
+            83.969970703125,
+            88.18646240234375
+          ],
+          "class": "buoy",
+          "confidence": 0.44686561822891235
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004580L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004605L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            711.93994140625,
+            495.0758972167969,
+            106.70849609375,
+            130.51766967773438
+          ],
+          "class": "buoy",
+          "confidence": 0.4882142245769501
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004630L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004655L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004680L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004705L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004730L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004755L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004780L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004805L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004830L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006825L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006850L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006875L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006900L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006925L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006950L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006975L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007000L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007025L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007050L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007075L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00010965L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00010990L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011015L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011040L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011065L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011090L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016005L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016030L.mat",
+      "num_gt": 0,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            534.3036499023438,
+            154.4447784423828,
+            424.04632568359375,
+            95.42195129394531
+          ],
+          "class": "ship",
+          "confidence": 0.4399735629558563
+        },
+        {
+          "xywh": [
+            0.0,
+            628.203369140625,
+            175.11956787109375,
+            244.03387451171875
+          ],
+          "class": "ship",
+          "confidence": 0.35894525051116943
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016055L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016080L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016105L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016130L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016155L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016180L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            627.66796875,
+            399.41436767578125,
+            461.74267578125,
+            178.409423828125
+          ],
+          "class": "ship",
+          "confidence": 0.36922669410705566
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016205L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            545.8563232421875,
+            387.9190979003906,
+            456.8480224609375,
+            195.55740356445312
+          ],
+          "class": "ship",
+          "confidence": 0.4663718342781067
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016230L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016255L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019395L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019420L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.0,
+            508.8626403808594,
+            367.551025390625,
+            91.69815063476562
+          ],
+          "class": "ship",
+          "confidence": 0.48815733194351196
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019445L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.0,
+            498.8836364746094,
+            277.4064025878906,
+            94.79440307617188
+          ],
+          "class": "ship",
+          "confidence": 0.4554244577884674
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019470L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019495L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            0.06207479164004326,
+            453.02142333984375,
+            104.3975046761334,
+            198.1221923828125
+          ],
+          "class": "ship",
+          "confidence": 0.5198995471000671
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019520L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019545L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019570L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            413.7654113769531,
+            367.9203186035156,
+            352.8431091308594,
+            197.23513793945312
+          ],
+          "class": "ship",
+          "confidence": 0.4434302747249603
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019595L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019620L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1,
+      "detections": [
+        {
+          "xywh": [
+            871.8988037109375,
+            328.9598693847656,
+            405.951171875,
+            234.47824096679688
+          ],
+          "class": "ship",
+          "confidence": 0.6031439900398254
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019645L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019670L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019695L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021545L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021570L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021595L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021620L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021645L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            639.625244140625,
+            627.3086547851562,
+            492.7769775390625,
+            232.7091064453125
+          ],
+          "class": "ship",
+          "confidence": 0.2682092785835266
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021670L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1106.7742919921875,
+            519.8450317382812,
+            170.8751220703125,
+            66.00384521484375
+          ],
+          "class": "ship",
+          "confidence": 0.6148180365562439
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021695L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021720L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1117.16748046875,
+            457.1063537597656,
+            160.4716796875,
+            67.95803833007812
+          ],
+          "class": "ship",
+          "confidence": 0.6165818572044373
+        }
+      ]
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021745L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021770L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021795L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021820L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021845L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021870L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021895L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021920L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021945L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021970L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021995L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022020L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022045L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022070L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022375L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022400L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022425L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022450L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022475L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022500L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011202L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011227L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011252L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011277L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011302L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011327L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011352L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            949.6671752929688,
+            369.34539794921875,
+            327.68634033203125,
+            278.7132568359375
+          ],
+          "class": "ship",
+          "confidence": 0.5133615136146545
+        },
+        {
+          "xywh": [
+            1230.4381103515625,
+            1.273801565170288,
+            47.001220703125,
+            75.4558355808258
+          ],
+          "class": "boat",
+          "confidence": 0.38291412591934204
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011377L.mat",
+      "num_gt": 0,
+      "num_det": 2,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            945.961181640625,
+            357.80242919921875,
+            331.41796875,
+            315.0906982421875
+          ],
+          "class": "ship",
+          "confidence": 0.5736417770385742
+        },
+        {
+          "xywh": [
+            1038.5584716796875,
+            381.964599609375,
+            238.56591796875,
+            291.62054443359375
+          ],
+          "class": "ship",
+          "confidence": 0.4545581042766571
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011402L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011427L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011452L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1077.561279296875,
+            583.1595458984375,
+            200.1138916015625,
+            108.07281494140625
+          ],
+          "class": "ship",
+          "confidence": 0.26987597346305847
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011477L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011502L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011527L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011552L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            935.6868896484375,
+            686.5925903320312,
+            280.046875,
+            103.6710205078125
+          ],
+          "class": "ship",
+          "confidence": 0.3781871199607849
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011577L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            0.587703287601471,
+            739.8572387695312,
+            571.7602581381798,
+            218.14276123046875
+          ],
+          "class": "ship",
+          "confidence": 0.7645421028137207
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011602L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011627L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011652L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011677L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011702L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011727L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011752L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011777L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012055L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012080L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012105L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012130L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012155L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012180L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012205L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1224.123779296875,
+            1.045856237411499,
+            53.0281982421875,
+            84.548504114151
+          ],
+          "class": "boat",
+          "confidence": 0.5189746022224426
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012230L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1225.0169677734375,
+            0.9537686109542847,
+            52.1431884765625,
+            83.34573090076447
+          ],
+          "class": "boat",
+          "confidence": 0.5712946653366089
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012255L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012280L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012305L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012330L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            1224.3839111328125,
+            0.9231006503105164,
+            52.7811279296875,
+            84.79235345125198
+          ],
+          "class": "boat",
+          "confidence": 0.3589411973953247
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012355L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012380L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012405L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012430L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012455L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0,
+      "detections": [
+        {
+          "xywh": [
+            992.7353515625,
+            776.2492065429688,
+            285.2646484375,
+            181.75079345703125
+          ],
+          "class": "ship",
+          "confidence": 0.5831419229507446
+        }
+      ]
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012480L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012505L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012530L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012555L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012580L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012605L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012630L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012655L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012680L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0,
+      "detections": []
+    }
+  ]
+}
