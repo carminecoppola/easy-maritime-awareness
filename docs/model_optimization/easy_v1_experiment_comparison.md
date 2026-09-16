@@ -1,5 +1,7 @@
 # EASY-v1 Experiment Comparison
 
+> **Historical / superseded.** This documents the EASY-v1 phase-1 run only (leakage-affected, mAP50 0.94207 not trustworthy). For current results see `docs/TRAINING_AND_EXPERIMENT_RESULTS.md` and `outputs/reports/easy_v3_results.md`.
+
 Generated from fresh Phase 1 evaluations.
 
 ## Val

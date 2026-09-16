@@ -1,0 +1,3191 @@
+{
+  "summary": {
+    "weights": "/home/c.coppola/projects/EASY/easy-maritime-awareness/outputs/experiments/easy_v3_aboships_candidate/yolov8n_pretrained_50ep_easy_v3_aboships_candidate_960/weights/best.pt",
+    "imgsz": 960,
+    "total_ground_truth_obstacles": 956,
+    "total_detections": 278,
+    "matched_ground_truth": 37,
+    "object_level_recall_class_agnostic": 0.0387,
+    "object_level_precision_class_agnostic": 0.1331
+  },
+  "per_image": [
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004525L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004550L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004575L.mat",
+      "num_gt": 0,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004600L.mat",
+      "num_gt": 1,
+      "num_det": 4,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004625L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004650L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004675L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004700L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004725L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004750L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004775L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004800L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004825L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004850L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004875L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004900L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004925L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004950L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00004975L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005000L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005025L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00004500-00005050",
+      "frame": "00005050L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025225L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025250L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025275L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025300L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025325L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025350L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025375L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025400L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025425L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025450L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025475L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025500L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025525L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025550L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025575L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025600L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025625L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00025200-00025670",
+      "frame": "00025650L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027425L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027450L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027475L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027500L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027525L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027550L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027575L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027600L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027625L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00027400-00027650",
+      "frame": "00027650L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00040975L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041000L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041025L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041050L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041075L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041100L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041125L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041150L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00040950-00041190",
+      "frame": "00041175L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060586L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060611L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060636L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060661L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060686L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060711L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060736L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060761L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060786L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060811L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060836L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060861L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060886L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060911L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060936L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060961L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00060986L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061011L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061036L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061061L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061086L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061111L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061136L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061161L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061186L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061211L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061236L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061261L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061286L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061311L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061336L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061361L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061386L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061411L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061436L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00060561-00061461",
+      "frame": "00061461L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061876L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061901L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061926L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061951L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00061976L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062001L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062026L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062051L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062076L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062101L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062126L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062151L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062176L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062201L.mat",
+      "num_gt": 7,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062226L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062251L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062276L.mat",
+      "num_gt": 5,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062301L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062326L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062351L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062376L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062401L.mat",
+      "num_gt": 6,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062426L.mat",
+      "num_gt": 9,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062451L.mat",
+      "num_gt": 10,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062476L.mat",
+      "num_gt": 9,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062501L.mat",
+      "num_gt": 8,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062526L.mat",
+      "num_gt": 8,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062551L.mat",
+      "num_gt": 8,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062576L.mat",
+      "num_gt": 8,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062601L.mat",
+      "num_gt": 9,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062626L.mat",
+      "num_gt": 9,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00061851-00062671",
+      "frame": "00062651L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062696L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062721L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062746L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062771L.mat",
+      "num_gt": 5,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062796L.mat",
+      "num_gt": 5,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062821L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062846L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062871L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062896L.mat",
+      "num_gt": 5,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062921L.mat",
+      "num_gt": 5,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062946L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062971L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00062996L.mat",
+      "num_gt": 7,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063021L.mat",
+      "num_gt": 7,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063046L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063071L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063096L.mat",
+      "num_gt": 6,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063121L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063146L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063171L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063196L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063221L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063246L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063271L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063296L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063321L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063346L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063371L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063396L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063421L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00062671-00063461",
+      "frame": "00063446L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067297L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067322L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067347L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067372L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067397L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067422L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067447L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067472L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067497L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067522L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067547L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067572L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067597L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067622L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067647L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067672L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067697L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067722L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067747L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067772L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067797L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067822L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067847L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067872L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067897L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00067272-00067942",
+      "frame": "00067922L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074457L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074482L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074507L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074532L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074557L.mat",
+      "num_gt": 2,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074582L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope67-00-00074432-00074612",
+      "frame": "00074607L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011235L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011260L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011285L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011210-00011320",
+      "frame": "00011310L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011545L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011570L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011595L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011620L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011645L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011670L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011695L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011720L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011745L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011770L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011520-00011800",
+      "frame": "00011795L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011825L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011850L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011875L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011900L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011925L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011950L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00011975L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00011800-00012000",
+      "frame": "00012000L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014362L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014387L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014412L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014437L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014462L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014487L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014512L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00014337-00014547",
+      "frame": "00014537L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017675L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017700L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017725L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017750L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017775L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017800L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope71-01-00017650-00017825",
+      "frame": "00017825L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013805L.mat",
+      "num_gt": 2,
+      "num_det": 4,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013830L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013855L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013880L.mat",
+      "num_gt": 2,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013905L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013930L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013955L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00013980L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014005L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014030L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014055L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014080L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014105L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014130L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014155L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00013780-00014195",
+      "frame": "00014180L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021525L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021550L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021575L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021600L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021625L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021650L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021675L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021700L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021725L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021750L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021775L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021800L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021825L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021850L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021875L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021900L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021925L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021950L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00021975L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022000L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022025L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022050L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022075L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022100L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022125L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00021500-00022160",
+      "frame": "00022150L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037575L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037600L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037625L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037650L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037675L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037700L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037725L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037750L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037775L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037800L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037825L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00037550-00037860",
+      "frame": "00037850L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062225L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062250L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062275L.mat",
+      "num_gt": 2,
+      "num_det": 8,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062300L.mat",
+      "num_gt": 1,
+      "num_det": 5,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062325L.mat",
+      "num_gt": 1,
+      "num_det": 5,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062350L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062375L.mat",
+      "num_gt": 1,
+      "num_det": 4,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062400L.mat",
+      "num_gt": 1,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062425L.mat",
+      "num_gt": 0,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062450L.mat",
+      "num_gt": 0,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062475L.mat",
+      "num_gt": 0,
+      "num_det": 6,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope75-00-00062200-00062500",
+      "frame": "00062500L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000585L.mat",
+      "num_gt": 0,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000610L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000635L.mat",
+      "num_gt": 1,
+      "num_det": 4,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000660L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000685L.mat",
+      "num_gt": 1,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000710L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000735L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000760L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000785L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000810L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000835L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000860L.mat",
+      "num_gt": 1,
+      "num_det": 5,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000885L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000910L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000935L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000960L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00000985L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001010L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001035L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00000560-00001080",
+      "frame": "00001060L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004355L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004380L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004405L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004430L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004455L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004480L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004505L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004530L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004555L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004580L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004605L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004630L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004655L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004680L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004705L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004730L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004755L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004780L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004805L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00004330-00004850",
+      "frame": "00004830L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006825L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006850L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006875L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006900L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006925L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006950L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00006975L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007000L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007025L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007050L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00006800-00007095",
+      "frame": "00007075L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00010965L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00010990L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011015L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011040L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011065L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00010940-00011100",
+      "frame": "00011090L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016005L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016030L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016055L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016080L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016105L.mat",
+      "num_gt": 2,
+      "num_det": 3,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016130L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016155L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016180L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016205L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016230L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00015980-00016270",
+      "frame": "00016255L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019395L.mat",
+      "num_gt": 1,
+      "num_det": 2,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019420L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019445L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019470L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019495L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019520L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019545L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019570L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019595L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019620L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019645L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019670L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00019370-00019710",
+      "frame": "00019695L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021545L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021570L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021595L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021620L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021645L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021670L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021695L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021720L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021745L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021770L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021795L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021820L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021845L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021870L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021895L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021920L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021945L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021970L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00021995L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022020L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022045L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00021520-00022080",
+      "frame": "00022070L.mat",
+      "num_gt": 4,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022375L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022400L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022425L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022450L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022475L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope81-00-00022350-00022520",
+      "frame": "00022500L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011202L.mat",
+      "num_gt": 3,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011227L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011252L.mat",
+      "num_gt": 2,
+      "num_det": 2,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011277L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011302L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011327L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011352L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011377L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011402L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011427L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011452L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011477L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011502L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011527L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011552L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011577L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011602L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011627L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011652L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011677L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011702L.mat",
+      "num_gt": 3,
+      "num_det": 2,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011727L.mat",
+      "num_gt": 4,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011752L.mat",
+      "num_gt": 3,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00011177-00011797",
+      "frame": "00011777L.mat",
+      "num_gt": 2,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012055L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012080L.mat",
+      "num_gt": 2,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012105L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 1
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012130L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012155L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012180L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012205L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012230L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012255L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012280L.mat",
+      "num_gt": 1,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012305L.mat",
+      "num_gt": 1,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012330L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012355L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012380L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012405L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012430L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012455L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012480L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012505L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012530L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012555L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012580L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012605L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012630L.mat",
+      "num_gt": 0,
+      "num_det": 1,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012655L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    },
+    {
+      "sequence": "kope82-00-00012030-00012700",
+      "frame": "00012680L.mat",
+      "num_gt": 0,
+      "num_det": 0,
+      "num_matched": 0
+    }
+  ]
+}

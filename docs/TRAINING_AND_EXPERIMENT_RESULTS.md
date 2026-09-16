@@ -1,5 +1,49 @@
 # EASY Training And Experiment Results
 
+## ⚠️ EASY-v3: the real current results (read this first)
+
+The model actually exported as `best.onnx` and running in the dashboard is
+**not** the "Official Baseline Result" below — it is a sequence-safe run
+(same split methodology as "EASY-v2 Result") with the public ABOships
+dataset added on top, at 640px. A better-performing **960px** variant of the
+same recipe also exists and is not yet deployed. Full methodology, raw data
+pointers and verdict: `outputs/reports/easy_v3_results.md`.
+
+| | Official (leakage) | Sequence-safe, EASY data only | + ABOships, 640px (**deployed**) | + ABOships, 960px (**best available, not deployed**) |
+| --- | ---: | ---: | ---: | ---: |
+| Precision | 0.915 | 0.522 | 0.699 | 0.712 |
+| Recall | 0.918 | 0.369 | 0.592 | 0.642 |
+| mAP50 | 0.942 | 0.382 | 0.627 | 0.678 |
+| mAP50-95 | 0.707 | 0.238 | 0.314 | 0.344 |
+| Boat recall | — | 0.198 | — (not recorded) | 0.651 |
+| Buoy recall | — | 0.000 | 0.485 | 0.536 |
+
+ABOships is what recovers buoy recall from 0 to 0.48–0.54; resolution
+960 vs 640 gives a real but modest further gain (+10% mAP50-95), not a fix
+for the deeper problem below.
+
+### External validation on MODD2 (open water, never trained on)
+
+482 sampled frames, 28 sequences, 956 annotated obstacles, class-agnostic
+recall at IoU 0.3:
+
+| Model | Recall |
+| --- | ---: |
+| EASY-v1 official (leakage-affected) | 1.05% |
+| Best available (960px + ABOships) | 3.87% |
+
+Verified not a pipeline artifact (correct GT alignment, coherent true
+positives, false negatives are genuinely tiny/distant obstacles). **Public
+data does not cover the open-water / small-object regime** — see
+`docs/proprietary_acquisition_spec.md` for the proposed fix.
+
+### Known failure mode: false positives on non-maritime scenes
+
+124 non-maritime images (filtered COCO128): 16.9% produced a false positive
+at confidence ≥ 0.25, **always classified `ship`** (never `boat`/`buoy`).
+Example: a canopy bed at 0.83 confidence. Raw data:
+`outputs/reports/easy_v1_false_positive_scan.json`.
+
 ## Official Baseline Result
 
 Official baseline:
@@ -113,22 +157,42 @@ Decision:
 
 EASY-v2.1 is not a baseline.
 
-## Final Scientific Conclusion
+## Final Scientific Conclusion (superseded — see warning at top of file)
 
-EASY-v1 remains the final official baseline.
+This conclusion was written before the leakage in EASY-v1 was traced to its
+root cause and before ABOships was added. It is kept for historical record.
 
-EASY-v2 and EASY-v2.1 showed that stricter sequence-safe evaluation is scientifically valuable, but the currently available internal data does not support robust generalization under that stricter benchmark.
+> EASY-v1 remains the final official baseline. EASY-v2 and EASY-v2.1 showed
+> that stricter sequence-safe evaluation is scientifically valuable, but the
+> currently available internal data does not support robust generalization
+> under that stricter benchmark. Dataset iteration stops here.
 
-Dataset iteration stops here.
+**Updated conclusion:** EASY-v1's mAP50 0.94207 is leakage-inflated and
+should not be cited. EASY-v2/v2.1 correctly diagnosed the buoy-recall problem
+under a clean split; adding ABOships fixed it well enough to reach buoy
+recall 0.485–0.536 (see "EASY-v3" above). The 960px ABOships variant is the
+best model produced so far and should replace the 640px model currently
+deployed. Dataset iteration should resume only to close the MODD2 open-water
+gap (3.87% detection at best), via new real-world data per
+`docs/proprietary_acquisition_spec.md` — not further internal split tuning.
 
 ## Canonical Reports
 
-The only active reports are:
+The active reports are:
 
-- `outputs/reports/easy_dataset_iteration_closure.md`
-- `outputs/reports/easy_v1_test_evaluation.md`
-- `outputs/reports/easy_v1_buoy_rebalanced_report.md`
-- `outputs/reports/repository_final_cleanup_report.md`
+- `outputs/reports/easy_v3_results.md` — **the current reference report**:
+  leakage discovery, sequence-safe + ABOships results, MODD2 external
+  validation, false-positive scan, verdict.
+- `outputs/reports/easy_dataset_iteration_closure.md` — historical EASY-v1/v2/v2.1 closure (superseded, see warning at top of this file).
+- `outputs/reports/easy_v1_test_evaluation.md` — historical.
+- `outputs/reports/easy_v1_buoy_rebalanced_report.md` — historical.
+- `outputs/reports/repository_final_cleanup_report.md` — historical.
+
+Raw evaluation data backing `easy_v3_results.md`:
+
+- `outputs/reports/easy_v1_modd2_external_eval.json`
+- `outputs/reports/easy_v1_false_positive_scan.json`
+- `outputs/reports/easy_v3_aboships960_modd2_external_eval.json`
 
 All intermediate reports are archived under:
 

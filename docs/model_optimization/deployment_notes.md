@@ -1,5 +1,12 @@
 # Deployment Notes
 
+> **Historical.** This documents how the leakage-affected EASY-v1 weights
+> were exported. The export *mechanism* (Ultralytics ONNX export, class
+> mapping, letterbox preprocessing) is still how the current sequence-safe +
+> ABOships models are exported — only the source `.pt` path changes. For
+> which model is actually current, see `docs/TRAINING_AND_EXPERIMENT_RESULTS.md`
+> and `outputs/reports/easy_v3_results.md`.
+
 ## Export
 
 - Source model: `models/easy_v1_best_rgb.pt`

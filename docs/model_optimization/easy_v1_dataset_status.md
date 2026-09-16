@@ -1,5 +1,7 @@
 # EASY-v1 Dataset Status
 
+> **Historical / superseded.** This documents the EASY-v1 phase-1 run only (leakage-affected, mAP50 0.94207 not trustworthy). For current results see `docs/TRAINING_AND_EXPERIMENT_RESULTS.md` and `outputs/reports/easy_v3_results.md`.
+
 Generated: `2026-06-26T14:35:09.185058Z`
 
 Dataset root: `data/processed/EASY-v1-rgb3-buoy-rebalanced`
