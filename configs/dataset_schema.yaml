@@ -2,8 +2,7 @@
 # ASPIRATIONAL 5-class schema of EASY-v0 (includes debris, person). The model
 # actually in use, EASY-v1-rgb3-buoy-rebalanced (and its sequence-safe /
 # ABOships-augmented successors), uses only 3 classes (boat/ship/buoy) — see
-# configs/model_optimization/easy_v1_phase1.json and
-# data/processed/EASY-v1-rgb3-buoy-rebalanced/dataset.yaml, which are the
+# data/processed/EASY-v1-rgb3-buoy-rebalanced/dataset.yaml, which is the
 # source of truth for the current model. Not updated to 3 classes so as not
 # to silently erase the original product roadmap (debris/person remain a
 # declared future goal — see "debris_gap" below), but anyone using this file

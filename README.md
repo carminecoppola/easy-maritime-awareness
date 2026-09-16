@@ -122,8 +122,6 @@ outputs/
 scripts/
   dataset/                                 # sequence-safe split + ABOships curation
   validation/                              # MODD2 eval, false-positive scan, training launchers
-  model_optimization/                      # EASY-v1 phase 1 scripts (historical)
-  slurm/                                   # EASY-v1 phase 1 job scripts (historical)
 src/
 archive/                                   # gitignored, local-only historical work
 ```
