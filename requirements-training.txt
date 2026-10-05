@@ -1,0 +1,5 @@
+# Extra requirements for training and evaluating models (scripts/validation/*).
+# Ultralytics is licensed AGPL-3.0: see THIRD_PARTY_NOTICES.md before redistributing
+# anything built with it.
+-r requirements.txt
+ultralytics>=8.3,<9

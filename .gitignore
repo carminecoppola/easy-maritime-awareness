@@ -16,6 +16,7 @@
 *.tflite
 !models/easy_v1_best_rgb.pt
 !models/easy_v1_best_rgb.onnx
+!models/easy_v3_aboships_640.onnx
 
 # Runtime outputs
 /outputs/
