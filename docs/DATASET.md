@@ -24,7 +24,7 @@ Script: `scripts/dataset/build_sequence_safe_split.py`. Curation:
 `scripts/dataset/curate_aboships.py`. Full comparison and methodology:
 `outputs/reports/easy_v3_results.md`.
 
-| | Deployed today (`best.onnx`, per dashboard `docs/project-status.md`) | Best available candidate (not yet deployed) |
+| | Deployed (`models/easy_v3_aboships_640.onnx`) | Best available candidate (not deployed) |
 | --- | --- | --- |
 | Resolution | 640px | 960px |
 | Precision | 0.699 | 0.712 |
@@ -33,7 +33,7 @@ Script: `scripts/dataset/build_sequence_safe_split.py`. Curation:
 | mAP50-95 | 0.314 | 0.344 |
 | Boat recall | — (not recorded at 640) | 0.651 |
 | Buoy recall | 0.485 | 0.536 |
-| Weights | not in this repo | `outputs/experiments/easy_v3_aboships_candidate/yolov8n_pretrained_50ep_easy_v3_aboships_candidate_960/weights/best.pt` |
+| Weights | `models/easy_v3_aboships_640.onnx` | not versioned (`outputs/experiments/easy_v3_aboships_candidate/.../weights/best.pt` on the training cluster) |
 
 For reference, the same sequence-safe split *without* ABOships (i.e. only
 resolving the leakage, no new data) scored mAP50 0.382 and **buoy recall
@@ -178,8 +178,14 @@ repository until now.
 ## Pipeline From Raw Sources
 
 Raw sources (`data/raw/smd`, `data/raw/seaships`, `data/raw/massmind`, ~41GB)
-are the only originals kept on disk. Every intermediate stage below is
-reproducible from them and was removed from `archive/` to save space.
+are the only originals kept on disk. Every intermediate stage below was
+reproducible from them and was removed to save space.
+
+> **Versioning note.** Only stages 6 and 7 (`scripts/dataset/`) are versioned in this
+> repository. The scripts of stages 0-4 lived in a local, unversioned `archive/`
+> folder and are listed here for provenance only; stage 5 (the buoy rebalancing that
+> introduced the leakage) never had a script. Treat everything before stage 6 as
+> historical: new work starts from stage 6.
 
 | Stage | Script | Output (removed) |
 | --- | --- | --- |

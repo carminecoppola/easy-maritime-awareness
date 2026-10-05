@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this repository or the EASY models in your work, please cite it as below and, where relevant, the associated papers."
+title: "EASY - Environmental Awareness by the Sea and beYond: maritime RGB object-detection models and tools"
+type: software
+version: 1.0.0
+date-released: 2026-10-05
+license: BSD-3-Clause
+repository-code: "https://github.com/carminecoppola/easy-maritime-awareness"
+authors:
+  - family-names: Coppola
+    given-names: Carmine
+keywords:
+  - maritime awareness
+  - object detection
+  - YOLO
+  - edge computing
+  - Raspberry Pi
+references:
+  - type: conference-paper
+    title: "An Edge Node for Citizen-Contributed Maritime Observations"
+    authors:
+      - family-names: Coppola
+        given-names: Carmine
+      - family-names: Bucciero
+        given-names: V.
+      - family-names: Perrotta
+        given-names: S.
+      - family-names: Montella
+        given-names: R.
+    collection-title: "INSTIL Workshop, IEEE eScience 2026"
+    year: 2026

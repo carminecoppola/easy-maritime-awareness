@@ -2,7 +2,7 @@
 
 ## ⚠️ EASY-v3: the real current results (read this first)
 
-The model actually exported as `best.onnx` and running in the dashboard is
+The model released as `models/easy_v3_aboships_640.onnx` and running in the dashboard is
 **not** the "Official Baseline Result" below — it is a sequence-safe run
 (same split methodology as "EASY-v2 Result") with the public ABOships
 dataset added on top, at 640px. A better-performing **960px** variant of the
@@ -186,7 +186,6 @@ The active reports are:
 - `outputs/reports/easy_dataset_iteration_closure.md` — historical EASY-v1/v2/v2.1 closure (superseded, see warning at top of this file).
 - `outputs/reports/easy_v1_test_evaluation.md` — historical.
 - `outputs/reports/easy_v1_buoy_rebalanced_report.md` — historical.
-- `outputs/reports/repository_final_cleanup_report.md` — historical.
 
 Raw evaluation data backing `easy_v3_results.md`:
 
@@ -194,6 +193,4 @@ Raw evaluation data backing `easy_v3_results.md`:
 - `outputs/reports/easy_v1_false_positive_scan.json`
 - `outputs/reports/easy_v3_aboships960_modd2_external_eval.json`
 
-All intermediate reports are archived under:
-
-`archive/cleanup_20260620_repo_reset/reports/`
+Earlier intermediate reports were kept in a local archive that is not versioned.
