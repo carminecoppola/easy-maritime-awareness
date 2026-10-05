@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-"""Tasso di falsi positivi di un modello EASY su immagini non marittime.
-Ogni detection è per definizione un falso positivo.
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""Measure the false-positive rate of an EASY model on non-maritime images.
 
-Uso:
-    venv/bin/python scripts/validation/false_positive_scan.py \
+Every detection on such images is a false positive by definition. The report lists, per
+image and per class, how many boxes appear at the operating confidence threshold and at
+a lower one (to see how close the model is to firing).
+
+Usage:
+    python scripts/validation/false_positive_scan.py \
         --weights outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced/weights/best.pt \
         --images data/external_validation/non_maritime_fp_v1/images \
         --out outputs/reports/easy_v1_false_positive_scan.json
+
+Requires the ``ultralytics`` package (see requirements-training.txt).
 """
 
 import argparse
@@ -18,18 +26,20 @@ from ultralytics import YOLO
 
 
 def parse_args():
+    """Parse the command line."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--weights", required=True)
     parser.add_argument("--images", required=True)
     parser.add_argument("--out", required=True)
     parser.add_argument("--conf", type=float, default=0.25,
-                         help="soglia di confidenza (default: soglia operativa standard YOLO)")
+                         help="confidence threshold (default: the standard YOLO operating threshold)")
     parser.add_argument("--low-conf", type=float, default=0.10,
-                         help="soglia bassa aggiuntiva per vedere quanto e' 'vicino' il modello a sparare FP")
+                         help="additional low threshold, to see how close the model is to firing a false positive")
     return parser.parse_args()
 
 
 def scan(weights_path, images_dir, conf, low_conf):
+    """Run the model on every image of a folder and summarise the false positives."""
     model = YOLO(weights_path)
     names = model.names
 
@@ -97,6 +107,7 @@ def scan(weights_path, images_dir, conf, low_conf):
 
 
 def main():
+    """Scan the images and write the JSON report."""
     args = parse_args()
     report = scan(args.weights, args.images, args.conf, args.low_conf)
 
@@ -107,14 +118,14 @@ def main():
         json.dump(report, handle, indent=2)
 
     s = report["summary"]
-    print(f"Immagini testate: {report['num_images']}")
-    print(f"Falsi positivi @ conf>={args.conf}: {s['images_with_false_positive_at_conf']} immagini "
+    print(f"Images tested: {report['num_images']}")
+    print(f"False positives @ conf>={args.conf}: {s['images_with_false_positive_at_conf']} images "
           f"({s['false_positive_image_rate_at_conf']*100:.1f}%), "
-          f"{s['total_false_positive_detections_at_conf']} box totali")
-    print(f"Per classe: {s['per_class_false_positives_at_conf']}")
-    print(f"Qualsiasi detection @ conf>={args.low_conf}: {s['images_with_any_detection_at_low_conf']} immagini "
+          f"{s['total_false_positive_detections_at_conf']} boxes in total")
+    print(f"Per class: {s['per_class_false_positives_at_conf']}")
+    print(f"Any detection @ conf>={args.low_conf}: {s['images_with_any_detection_at_low_conf']} images "
           f"({s['false_positive_image_rate_at_low_conf']*100:.1f}%)")
-    print(f"Report completo scritto in: {args.out}")
+    print(f"Full report written to: {args.out}")
 
 
 if __name__ == "__main__":

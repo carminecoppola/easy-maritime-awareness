@@ -1,10 +1,10 @@
-"""EASY dataset-core package."""
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""EASY model repository package.
 
-__version__ = "0.1.0"
+The repository is organised around scripts (``scripts/dataset`` and
+``scripts/validation``); this package only carries the version number.
+"""
 
-try:
-    from .config import load_config
-except ModuleNotFoundError:  # pragma: no cover - optional legacy entrypoint
-    load_config = None
-
-__all__ = ["load_config"]
+__version__ = "1.0.0"

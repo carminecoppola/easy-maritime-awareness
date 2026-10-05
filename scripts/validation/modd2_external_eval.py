@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
-"""Valutazione di un modello EASY su un campione di MODD2 (Marine Obstacle
-Detection Dataset 2, ViCoS/Università di Lubiana), mai visto in training.
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""Evaluate an EASY model on a sample of MODD2, an external benchmark never used in training.
 
-Le annotazioni MODD2 (`annotations_v2_redone/*/ground_truth/*.mat`) danno
-solo bounding box generici "obstacle", senza classe. La valutazione è quindi
-class-agnostic (IoU tra detection EASY, qualsiasi classe, e box MODD2), non
-comparabile al mAP per-classe del test set interno.
+MODD2 (Marine Obstacle Detection Dataset 2, ViCoS, University of Ljubljana) annotates
+generic "obstacle" boxes without a class (``annotations_v2_redone/*/ground_truth/*.mat``).
+The evaluation is therefore class-agnostic: a detection of ANY EASY class that matches
+a MODD2 box by IoU counts as a true positive. The numbers are not comparable with the
+per-class mAP of the internal test set.
 
-Uso:
-    venv/bin/python scripts/validation/modd2_external_eval.py \
-        --video-zip <path a MODD2_video_data_rectified.zip> \
-        --sample-plan <path a modd2_sample_plan.json> \
+Usage:
+    python scripts/validation/modd2_external_eval.py \
+        --video-zip <path to MODD2_video_data_rectified.zip> \
+        --sample-plan <path to modd2_sample_plan.json> \
         --weights outputs/experiments/.../best.pt \
         --out-dir data/external_validation/modd2_v1 \
         --report outputs/reports/easy_v1_modd2_external_eval.json
+
+Requires the ``ultralytics`` package (see requirements-training.txt).
 """
 
 import argparse
@@ -26,19 +31,21 @@ from ultralytics import YOLO
 
 
 def parse_args():
+    """Parse the command line."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--video-zip", required=True)
     p.add_argument("--sample-plan", required=True)
     p.add_argument("--weights", required=True)
-    p.add_argument("--out-dir", required=True, help="dove estrarre i frame campionati")
+    p.add_argument("--out-dir", required=True, help="where to extract the sampled frames")
     p.add_argument("--report", required=True)
     p.add_argument("--conf", type=float, default=0.25)
     p.add_argument("--iou-match", type=float, default=0.3,
-                    help="soglia IoU per considerare una detection un match con un box MODD2")
+                    help="IoU threshold to count a detection as a match with a MODD2 box")
     return p.parse_args()
 
 
 def iou_xywh(box_a, box_b):
+    """Intersection over union of two (x, y, w, h) boxes."""
     ax, ay, aw, ah = box_a
     bx, by, bw, bh = box_b
     ax2, ay2 = ax + aw, ay + ah
@@ -54,10 +61,12 @@ def iou_xywh(box_a, box_b):
 
 
 def xyxy_to_xywh(x1, y1, x2, y2):
+    """Convert corner coordinates to (x, y, w, h)."""
     return (x1, y1, x2 - x1, y2 - y1)
 
 
 def extract_frames(video_zip_path, plan, out_dir):
+    """Extract the planned left-camera frames from the ZIP and record their paths in ``plan``."""
     images_dir = os.path.join(out_dir, "images")
     os.makedirs(images_dir, exist_ok=True)
     extracted = {}
@@ -80,6 +89,11 @@ def extract_frames(video_zip_path, plan, out_dir):
 
 
 def evaluate(model, plan, conf, iou_match):
+    """Run the model on every frame and match detections to ground truth.
+
+    Matching is greedy by descending IoU, one detection per ground-truth box. Returns the
+    summary (object-level, class-agnostic recall and precision) and the per-image details.
+    """
     per_image = []
     total_gt = 0
     total_det = 0
@@ -143,34 +157,35 @@ def evaluate(model, plan, conf, iou_match):
 
 
 def main():
+    """Extract frames, evaluate the model and write the JSON report."""
     args = parse_args()
 
     with open(args.sample_plan) as fh:
         plan = json.load(fh)
 
-    print(f"Estrazione frame da {args.video_zip} ...")
+    print(f"Extracting frames from {args.video_zip} ...")
     extract_frames(args.video_zip, plan, args.out_dir)
     present = [e for e in plan if e.get("_image_path")]
-    print(f"Frame estratti: {len(present)} / {len(plan)}")
+    print(f"Frames extracted: {len(present)} / {len(plan)}")
 
-    print(f"Caricamento modello {args.weights} ...")
+    print(f"Loading model {args.weights} ...")
     model = YOLO(args.weights)
 
-    print("Esecuzione inferenza + matching IoU ...")
+    print("Running inference and IoU matching ...")
     summary, per_image = evaluate(model, present, args.conf, args.iou_match)
 
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "weights": args.weights,
-        "dataset": "MODD2 (ViCoS, Univ. of Ljubljana) - campione class-agnostic",
+        "dataset": "MODD2 (ViCoS, Univ. of Ljubljana) - class-agnostic sample",
         "conf_threshold": args.conf,
         "iou_match_threshold": args.iou_match,
         "num_frames_evaluated": len(present),
         "note": (
-            "Valutazione class-agnostic: MODD2 in questo formato non distingue "
-            "boat/ship/buoy, quindi ogni detection EASY (di qualsiasi classe) che "
-            "matcha in IoU un box MODD2 e' contata come vero positivo object-level. "
-            "Non comparabile direttamente al mAP per-classe del test set interno."
+            "Class-agnostic evaluation: MODD2 in this format does not distinguish "
+            "boat/ship/buoy, so every EASY detection (of any class) that matches a "
+            "MODD2 box by IoU is counted as an object-level true positive. Not "
+            "directly comparable with the per-class mAP of the internal test set."
         ),
         "summary": summary,
         "per_image": per_image,
@@ -180,10 +195,10 @@ def main():
     with open(args.report, "w") as fh:
         json.dump(report, fh, indent=2)
 
-    print(f"Recall object-level (class-agnostic): {summary['object_level_recall_class_agnostic']}")
-    print(f"Precision object-level (class-agnostic): {summary['object_level_precision_class_agnostic']}")
+    print(f"Object-level recall (class-agnostic): {summary['object_level_recall_class_agnostic']}")
+    print(f"Object-level precision (class-agnostic): {summary['object_level_precision_class_agnostic']}")
     print(f"GT: {summary['total_ground_truth_obstacles']}  Det: {summary['total_detections']}  Matched: {summary['matched_ground_truth']}")
-    print(f"Report scritto in: {args.report}")
+    print(f"Report written to: {args.report}")
 
 
 if __name__ == "__main__":

@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-"""Training di prova su un candidato di split sequence-safe, per confrontarlo
-con EASY-v1-rgb3-buoy-rebalanced a parita' di iperparametri.
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""Train YOLOv8n on a sequence-safe split candidate and evaluate it on its test set.
 
-Iperparametri copiati da
-`outputs/experiments/easy_v1_buoy_rebalanced/yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced/training_request.json`
-(il training ufficiale di EASY-v1), cosi' l'unica variabile che cambia e' lo
-split dei dati, non la ricetta di training.
+The hyper-parameters are copied from the official EASY-v1 training
+(``training_request.json`` of the ``yolov8n_pretrained_50ep_easy_v1_buoy_rebalanced``
+run), so the only variable that changes is the data split, not the training recipe.
+After training, the best weights are evaluated explicitly on the ``test`` split and a
+``test_metrics_summary.json`` is written next to them.
 
-Uso:
-    venv/bin/python scripts/validation/train_sequence_safe_candidate.py \
+Usage:
+    python scripts/validation/train_sequence_safe_candidate.py \
         --dataset-yaml data/processed/EASY-v3-sequence-safe-candidate/dataset.yaml \
         --project outputs/experiments/easy_v3_sequence_safe_candidate \
         --name yolov8n_pretrained_50ep_easy_v3_sequence_safe_candidate
+
+Requires the ``ultralytics`` package (see requirements-training.txt) and, for a
+reasonable training time, a GPU. The Slurm launchers next to this file show how it
+was run on a cluster.
 """
 
 import argparse
@@ -22,6 +29,7 @@ from ultralytics import YOLO
 
 
 def parse_args():
+    """Parse the command line."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--dataset-yaml", required=True)
     p.add_argument("--model", default="models/pretrained/yolov8n.pt")
@@ -39,6 +47,7 @@ def parse_args():
 
 
 def main():
+    """Train, evaluate on the test split and write the metrics summary."""
     args = parse_args()
 
     request = {
@@ -56,7 +65,7 @@ def main():
         "patience": args.patience,
         "cache": args.cache,
         "pretrained": True,
-        "note": "Stessi iperparametri del training ufficiale EASY-v1-rgb3-buoy-rebalanced; unica variabile: lo split dei dati.",
+        "note": "Same hyper-parameters as the official EASY-v1-rgb3-buoy-rebalanced training; the only variable is the data split.",
     }
     print(json.dumps(request, indent=2))
 
@@ -73,9 +82,8 @@ def main():
         cache=args.cache,
         project=args.project,
         name=args.name,
-        # exist_ok evita che una run precedente con lo stesso project/name
-        # crei una directory con suffisso "-2" e faccia puntare la
-        # valutazione a pesi vecchi.
+        # exist_ok prevents a previous run with the same project/name from creating a
+        # "-2" suffixed directory and making the evaluation point at old weights.
         exist_ok=True,
         pretrained=True,
     )
@@ -83,7 +91,7 @@ def main():
     save_dir = str(model.trainer.save_dir)
     best_weights = f"{save_dir}/weights/best.pt"
 
-    # val() di default usa lo split "val": secondo giro esplicito su "test".
+    # val() uses the "val" split by default: run an explicit second pass on "test".
     trained = YOLO(best_weights)
     test_metrics = trained.val(data=args.dataset_yaml, split="test", imgsz=args.imgsz, project=args.project, name=f"{args.name}_test_eval", exist_ok=True)
 

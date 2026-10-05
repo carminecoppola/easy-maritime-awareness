@@ -1,18 +1,28 @@
 #!/usr/bin/env python3
-"""Cura il dataset ABOships (Zenodo 10.5281/zenodo.4736931, CC BY 4.0) nel
-formato piatto atteso da scripts/dataset/build_sequence_safe_split.py
-(images/ + labels/, stem "aboships__<YYYYMMDD>_<nome originale>").
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""Curate the ABOships dataset into the flat layout used by the split builder.
 
-Mappa di classi:
+ABOships (Zenodo 10.5281/zenodo.4736931, CC BY 4.0, Abo Akademi University) is read
+from its ZIP archive and written as ``images/`` plus ``labels/`` (YOLO format) with the
+stem ``aboships__<YYYYMMDD>_<original name>``, which is what
+``scripts/dataset/build_sequence_safe_split.py`` expects: the date is the original
+recording-session folder and becomes the sequence id.
+
+Class mapping:
     boat, sailboat, motorboat, miscboat                        -> boat
     cargoship, cruiseship, ferry, militaryship, passengership   -> ship
     seamark                                                     -> buoy
-    miscellaneous (200 istanze, ambigua)                        -> scartata
+    miscellaneous (200 instances, ambiguous)                    -> discarded
 
-Uso:
-    venv/bin/python scripts/dataset/curate_aboships.py \
+Usage:
+    python scripts/dataset/curate_aboships.py \
         --zip data/external_sources/_staging_aboships/ABOshipsDataset.zip \
         --output-root data/external_sources/aboships_v1
+
+Please cite ABOships and keep its attribution in anything derived from it
+(see THIRD_PARTY_NOTICES.md).
 """
 
 import argparse
@@ -39,6 +49,7 @@ EASY_CLASS_ID = {"boat": 0, "ship": 1, "buoy": 2}
 
 
 def parse_args():
+    """Parse the command line."""
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--zip", required=True)
     p.add_argument("--output-root", required=True)
@@ -48,6 +59,7 @@ def parse_args():
 
 
 def main():
+    """Convert the CSV annotations to YOLO labels and write a curation summary."""
     args = parse_args()
     output_root = Path(args.output_root)
     images_dir = output_root / "images"
@@ -57,8 +69,8 @@ def main():
 
     with zipfile.ZipFile(args.zip) as zf:
         names = zf.namelist()
-        # Mappa: nome file originale (senza estensione) -> path completo nello
-        # zip (che include la cartella data, es. ".../20180626/xxx.png").
+        # Map: original file name (no extension) -> full path inside the zip, which
+        # includes the date folder, e.g. ".../20180626/xxx.png".
         image_entries = {}
         for n in names:
             if not n.startswith(args.images_prefix_in_zip):
@@ -66,7 +78,7 @@ def main():
             if not (n.endswith(".png") or n.endswith(".jpg") or n.endswith(".jpeg")):
                 continue
             stem_original = Path(n).stem
-            date = Path(n).parent.name  # es. "20180626"
+            date = Path(n).parent.name  # e.g. "20180626"
             image_entries[stem_original] = (n, date)
 
         with zf.open(args.csv_path_in_zip) as fh:
@@ -94,10 +106,10 @@ def main():
                     int(row["xmin"]), int(row["xmax"]), int(row["ymin"]), int(row["ymax"]),
                 ))
 
-        # Import differito: PIL serve solo qui, per leggere le dimensioni
-        # reali di ogni immagine (necessarie per normalizzare i box in
-        # formato YOLO). La descrizione del dataset dichiara 720p per tutte
-        # le immagini ma non ci si fida senza verificarlo file per file.
+        # Deferred import: PIL is only needed here, to read the real size of every
+        # image (needed to normalise the boxes to YOLO format). The dataset
+        # description claims 720p for all images, but this is verified file by file
+        # instead of trusted.
         from PIL import Image
 
         written_images = 0

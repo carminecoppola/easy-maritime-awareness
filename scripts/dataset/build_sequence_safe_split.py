@@ -1,30 +1,48 @@
 #!/usr/bin/env python3
-"""Costruttore di split train/val/test sequence-safe.
+# EASY Maritime Awareness - model repository
+# Copyright (c) 2026 Carmine Coppola and EASY contributors.
+# SPDX-License-Identifier: BSD-3-Clause
+"""Build a sequence-safe train/val/test split of a YOLO detection dataset.
 
-Assegna sempre l'intera sequenza (video/blocco sorgente) a un solo split,
-mai la singola immagine, con audit di leakage obbligatorio a fine build.
-Vedi outputs/reports/EASY_v3_results.md per il contesto (leakage nello
-split ufficiale EASY-v1).
+A *sequence* is a video, a recording session or a block of consecutive frames.
+Consecutive frames are nearly identical, so splitting a dataset image by image
+puts almost the same picture in both the training and the test set and inflates
+every metric. This script always assigns a whole sequence to exactly one split
+and runs a mandatory leakage audit at the end of every build. See
+``outputs/reports/easy_v3_results.md`` for the leakage found in the official
+EASY-v1 split.
 
-Supporta piu' source-root e, se presente un manifest.csv (stem/filename,
-sequence_id) nella cartella sorgente, usa quello invece di inferire la
-sequenza dal nome file.
+How sequences are found:
 
-Uso:
-    venv/bin/python scripts/dataset/build_sequence_safe_split.py \
-        --source-root archive/datasets/EASY-v0-rgb3-clean \
-        --output-root data/processed/<nome-candidato> \
-        --train-ratio 0.7 --val-ratio 0.15 --test-ratio 0.15 \
-        --seed 42
+* If the source folder contains a ``manifest.csv`` (columns ``stem`` or
+  ``filename``, and ``sequence_id``), it is the source of truth.
+* Otherwise the sequence is inferred from the file name:
+  ``smd__<video>_frame_<n>`` -> one sequence per source video,
+  ``aboships__<YYYYMMDD>_...`` -> one sequence per recording day,
+  ``seaships__<prefix><n>`` -> blocks of ``--seaships-block-size`` frames.
+* Images with identical content are merged into one sequence (union-find), so an
+  accidental duplicate across two sequences cannot end up in two splits.
 
-Il dataset prodotto è un candidato da valutare, non sostituisce
-automaticamente EASY-v1-rgb3-buoy-rebalanced.
+Assignment is greedy and deterministic for a given seed. Sequences that contain
+buoys (the scarce class) are placed first, balancing both image and buoy counts;
+the remaining sequences only balance image counts.
+
+Usage:
+    python scripts/dataset/build_sequence_safe_split.py \\
+        --source-root data/external_sources/aboships_curated \\
+        --output-root data/processed/<candidate-name> \\
+        --train-ratio 0.7 --val-ratio 0.15 --test-ratio 0.15 --seed 42
+
+The result is a *candidate* to evaluate; it never replaces the frozen
+EASY-v1-rgb3-buoy-rebalanced dataset.
 """
 
 import argparse
 import csv
 import hashlib
 import json
+import os
+import random
 import re
 import shutil
 from collections import Counter, defaultdict
@@ -38,9 +56,15 @@ CLASS_NAMES = {0: "boat", 1: "ship", 2: "buoy"}
 BUOY_CLASS_ID = 2
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"}
 
+# How much a missing buoy image weighs against a missing image when placing a
+# buoy-containing sequence (buoys are rare, so they dominate the decision).
+BUOY_WEIGHT = 3.0
+
 
 @dataclass(frozen=True)
 class Item:
+    """One image with its labels and the sequence it belongs to."""
+
     image_path: Path
     label_path: Path
     stem: str
@@ -51,51 +75,61 @@ class Item:
 
 
 class UnionFind:
-    """Fonde pseudo-sequenze quando due immagini risultano identiche (stesso
-    contenuto file), cosi' un duplicato accidentale tra due sequenze diverse
-    non puo' comunque finire in split diversi."""
+    """Merges pseudo-sequences when two images have identical content.
+
+    An accidental duplicate between two different sequences must not be able to
+    end up in different splits, so such sequences become one component.
+    """
 
     def __init__(self):
         self.parent = {}
 
     def add(self, value):
+        """Register a value as its own component."""
         self.parent.setdefault(value, value)
 
     def find(self, value):
+        """Return the representative of the component containing ``value``."""
         self.add(value)
         if self.parent[value] != value:
             self.parent[value] = self.find(self.parent[value])
         return self.parent[value]
 
     def union(self, left, right):
+        """Merge the components of ``left`` and ``right``."""
         left_root, right_root = self.find(left), self.find(right)
         if left_root != right_root:
             self.parent[right_root] = left_root
 
 
 def parse_args():
+    """Parse the command line."""
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--source-root", required=True, action="append",
-                   help="dataset da includere nello split: o con images/{train,val,test} e labels/{train,val,test} "
-                        "(dataset gia' splittato altrove, viene ri-splittato da zero), oppure con images/ e labels/ "
-                        "piatte senza sotto-cartelle di split (pool unico, es. un dataset esterno curato apposta). "
-                        "Ripetibile per includere piu' sorgenti nello stesso split sequence-safe (es. dati EASY "
-                        "attuali + un dataset pubblico aggiuntivo). Ogni fonte mantiene il proprio prefisso "
-                        "dataset (dal nome file, es. 'aboships__...') quindi le sequenze non collidono tra fonti.")
+                   help="Dataset to include in the split: either with images/{train,val,test} and "
+                        "labels/{train,val,test} (already split elsewhere; it is re-split from scratch), "
+                        "or with flat images/ and labels/ folders (a single pool, e.g. an external dataset "
+                        "curated on purpose). Repeat the option to merge several sources into one "
+                        "sequence-safe split (e.g. the current EASY data plus an additional public dataset). "
+                        "Each source keeps its own dataset prefix (from the file name, e.g. 'aboships__...') "
+                        "so sequences never collide across sources.")
     p.add_argument("--output-root", required=True)
     p.add_argument("--report", default=None, help="default: <output-root>/split_report.md")
     p.add_argument("--pinned-assignments", default=None,
-                   help="YAML opzionale {sequence_id: split} per fissare manualmente alcune sequenze note (es. stress-test), tutte le altre vengono stratificate automaticamente")
+                   help="Optional YAML {sequence_id: split} to pin some known sequences by hand "
+                        "(e.g. stress tests); every other sequence is stratified automatically")
     p.add_argument("--train-ratio", type=float, default=0.7)
     p.add_argument("--val-ratio", type=float, default=0.15)
     p.add_argument("--test-ratio", type=float, default=0.15)
-    p.add_argument("--seaships-block-size", type=int, default=256)
+    p.add_argument("--seaships-block-size", type=int, default=256,
+                   help="SeaShips has no sequence id: this many consecutive frames form one sequence")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--overwrite", action="store_true")
     return p.parse_args()
 
 
 def partial_file_fingerprint(path, chunk_size=8192):
+    """Cheap content fingerprint: size plus the first and last ``chunk_size`` bytes."""
     stat = path.stat()
     digest = hashlib.sha256()
     digest.update(str(stat.st_size).encode("ascii"))
@@ -108,6 +142,7 @@ def partial_file_fingerprint(path, chunk_size=8192):
 
 
 def parse_label(path):
+    """Read a YOLO label file as ``(class, cx, cy, w, h)`` tuples (empty if missing)."""
     if not path.exists():
         return tuple()
     objects = []
@@ -120,10 +155,14 @@ def parse_label(path):
 
 
 def parse_sequence_id(stem, seaships_block_size):
-    """Deriva un identificatore di sequenza dal nome file. Stesso schema gia'
-    validato in `archive/scripts/build_easy_v0_rgb3_balanced_v2_split.py`
-    (SMD: video sorgente; SeaShips: blocco di N frame consecutivi, dato che
-    SeaShips non espone un id di sequenza esplicito nel nome file)."""
+    """Derive ``(dataset_prefix, source_id, sequence_id)`` from a file stem.
+
+    SMD: one sequence per source video. SeaShips: a block of N consecutive frames,
+    because SeaShips does not expose a sequence id in the file name. ABOships: during
+    curation the stem is built as ``aboships__<YYYYMMDD>_<original name>``, where the
+    date is the original recording-session folder, the only grouping available for
+    that dataset: one session/day is one sequence, never a single image.
+    """
     if "__" in stem:
         dataset_prefix, source_id = stem.split("__", 1)
     else:
@@ -135,11 +174,6 @@ def parse_sequence_id(stem, seaships_block_size):
     if dataset_prefix == "smd" and smd_match:
         return dataset_prefix, source_id, f"smd:{smd_match.group('video')}"
 
-    # ABOships: durante la curation lo stem viene costruito come
-    # "aboships__<YYYYMMDD>_<nome originale>" (la data e' la cartella di
-    # sessione di registrazione originale, l'unico raggruppamento in
-    # sequenze disponibile per questo dataset). Una sessione/giorno = una
-    # sequenza, mai una singola immagine.
     aboships_match = re.match(r"(?P<date>\d{8})_", source_id)
     if dataset_prefix == "aboships" and aboships_match:
         return dataset_prefix, source_id, f"aboships:{aboships_match.group('date')}"
@@ -160,8 +194,10 @@ def parse_sequence_id(stem, seaships_block_size):
 
 
 def load_manifest(source_root):
-    """Carica manifest.csv (colonne stem/filename, sequence_id) se presente
-    nel source-root. Ritorna {} se assente."""
+    """Load ``manifest.csv`` (columns ``stem``/``filename`` and ``sequence_id``) if present.
+
+    Returns ``{stem: sequence_id}``, or ``{}`` when the file does not exist.
+    """
     manifest_path = source_root / "manifest.csv"
     if not manifest_path.exists():
         return {}
@@ -176,6 +212,7 @@ def load_manifest(source_root):
 
 
 def _collect_from_dir(image_dir, label_dir, seaships_block_size, manifest, dataset_tag):
+    """Collect the images of one folder as ``Item`` objects."""
     items = []
     if not image_dir.exists():
         return items
@@ -184,7 +221,7 @@ def _collect_from_dir(image_dir, label_dir, seaships_block_size, manifest, datas
             continue
         label_path = label_dir / f"{image_path.stem}.txt"
         if image_path.stem in manifest:
-            # Manifest esplicito: fonte di verita', nessuna inferenza per regex.
+            # An explicit manifest is the source of truth: no regex inference.
             dataset_prefix = dataset_tag
             sequence_id = manifest[image_path.stem]
         else:
@@ -202,10 +239,12 @@ def _collect_from_dir(image_dir, label_dir, seaships_block_size, manifest, datas
 
 
 def collect_items(source_roots, seaships_block_size):
-    """Accetta una o più cartelle sorgente: già splittate
-    (images/{train,val,test}) o pool piatti (images/ + labels/). Se presente
-    un manifest.csv, la sequenza dichiarata ha precedenza sull'inferenza dal
-    nome file."""
+    """Collect every image of one or more source folders.
+
+    A source is either already split (``images/{train,val,test}``) or a flat pool
+    (``images/`` plus ``labels/``). A ``manifest.csv``, when present, takes
+    precedence over the sequence inferred from the file name.
+    """
     items = []
     for source_root in source_roots:
         manifest = load_manifest(source_root)
@@ -226,9 +265,11 @@ def collect_items(source_roots, seaships_block_size):
 
 
 def merge_duplicate_sequences(items):
-    """Se un'immagine identica (stesso fingerprint) compare sotto due
-    pseudo-sequenze diverse, le fonde in un unico componente: altrimenti un
-    duplicato accidentale potrebbe finire in due split diversi."""
+    """Group items into components, merging sequences that share an identical image.
+
+    Returns ``{component_id: [items]}``. Without the merge, an accidental duplicate
+    could land in two different splits.
+    """
     uf = UnionFind()
     by_sequence = defaultdict(list)
     by_fingerprint = defaultdict(list)
@@ -249,6 +290,7 @@ def merge_duplicate_sequences(items):
 
 
 def sequence_stats(component_id, items):
+    """Image, per-class object and buoy-image counts of one component."""
     class_counts = Counter({cid: 0 for cid in CLASS_NAMES})
     for item in items:
         for class_id, *_ in item.objects:
@@ -262,14 +304,14 @@ def sequence_stats(component_id, items):
 
 
 def stratified_assign(components_stats, pinned, train_ratio, val_ratio, test_ratio, seed):
-    """Assegna ogni sequenza (mai una singola immagine) a esattamente uno
-    split. Le sequenze pinnate vanno dove richiesto; le altre sono ordinate in
-    modo deterministico (seed) e assegnate greedy allo split che ne ha piu'
-    bisogno per restare vicino ai target di immagini E di boe, cosi' la
-    stratificazione sulle boe avviene a livello di sequenza invece che di
-    immagine (il bug che ha causato la leakage nello split ufficiale)."""
-    import random
+    """Assign every sequence (never a single image) to exactly one split.
 
+    Pinned sequences go where requested. The others are shuffled deterministically
+    (seed) and assigned greedily to the split that needs them most to stay close to
+    the targets for images AND for buoys, so stratification on buoys happens at
+    sequence level instead of image level (the bug behind the leakage in the
+    official EASY-v1 split).
+    """
     targets = {"train": train_ratio, "val": val_ratio, "test": test_ratio}
     total = sum(t for t in targets.values())
     targets = {k: v / total for k, v in targets.items()}
@@ -289,22 +331,18 @@ def stratified_assign(components_stats, pinned, train_ratio, val_ratio, test_rat
             remaining.append(stats)
 
     rng = random.Random(seed)
+    # Seeded shuffle so that, at equal buoy counts, no source dataset is
+    # systematically favoured.
     rng.shuffle(remaining)
-    # Ordine deterministico via seed per non favorire sistematicamente una
-    # sorgente dataset a parita' di boe.
     buoy_sequences = [s for s in remaining if s["buoy_images"] > 0]
     plain_sequences = [s for s in remaining if s["buoy_images"] == 0]
     buoy_sequences.sort(key=lambda s: -s["buoy_images"])
 
     total_images = sum(s["images"] for s in components_stats.values())
     total_buoy_images = sum(s["buoy_images"] for s in components_stats.values()) or 1
-    BUOY_WEIGHT = 3.0
 
-    # Fase 1: distribuire SOLO le sequenze con boe (risorsa scarsa: solo
-    # poche in tutto il dataset) pesando sia il deficit immagini che quello
-    # boe, cosi' la stratificazione sulle boe avviene a livello di sequenza
-    # invece che di immagine (il bug che ha causato la leakage nello split
-    # ufficiale).
+    # Phase 1: place ONLY the sequences with buoys (the scarce resource: there are
+    # few in the whole dataset), weighing both the image deficit and the buoy deficit.
     for stats in buoy_sequences:
         best_split, best_score = None, None
         for split in SPLITS:
@@ -317,11 +355,9 @@ def stratified_assign(components_stats, pinned, train_ratio, val_ratio, test_rat
         running_images[best_split] += stats["images"]
         running_buoy_images[best_split] += stats["buoy_images"]
 
-    # Fase 2: il resto (nessuna boe in gioco) segue solo il bilanciamento
-    # immagini. Separata dalla fase 1 apposta: un deficit di boe ormai
-    # irraggiungibile per uno split (perche' le boe sono finite) non deve
-    # continuare a distorcere per sempre la distribuzione delle immagini
-    # restanti verso gli altri split.
+    # Phase 2: the rest (no buoys involved) only balances image counts. It is kept
+    # separate on purpose: a buoy deficit that can no longer be filled (the buoys
+    # are used up) must not keep distorting the distribution of the remaining images.
     for stats in plain_sequences:
         best_split, best_score = None, None
         for split in SPLITS:
@@ -335,9 +371,10 @@ def stratified_assign(components_stats, pinned, train_ratio, val_ratio, test_rat
 
 
 def reset_output(output_root, overwrite):
+    """Create an empty output tree; refuse to touch an existing one without ``--overwrite``."""
     if output_root.exists():
         if not overwrite:
-            raise FileExistsError(f"{output_root} esiste gia'; passa --overwrite per ricostruirlo")
+            raise FileExistsError(f"{output_root} already exists; pass --overwrite to rebuild it")
         shutil.rmtree(output_root)
     for split in SPLITS:
         (output_root / "images" / split).mkdir(parents=True, exist_ok=True)
@@ -345,15 +382,16 @@ def reset_output(output_root, overwrite):
 
 
 def link_or_copy(source, target):
+    """Hard-link ``source`` to ``target`` (no extra disk space), copying when linking fails."""
     target.parent.mkdir(parents=True, exist_ok=True)
     try:
-        import os
         os.link(source, target)
     except OSError:
         shutil.copy2(source, target)
 
 
 def write_dataset(items_by_split, output_root):
+    """Materialise the split on disk and write the Ultralytics ``dataset.yaml``."""
     for split, items in items_by_split.items():
         for item in items:
             link_or_copy(item.image_path, output_root / "images" / split / item.image_path.name)
@@ -373,7 +411,10 @@ def write_dataset(items_by_split, output_root):
 
 
 def audit_no_cross_split_leakage(assignment, components):
-    """Verifica che nessuna sequenza compaia in più di uno split."""
+    """Return ``{sequence_id: splits}`` for every sequence that appears in more than one split.
+
+    An empty result is the pass condition of the audit.
+    """
     sequence_to_split = defaultdict(set)
     for component_id, items in components.items():
         split = assignment[component_id]
@@ -384,12 +425,14 @@ def audit_no_cross_split_leakage(assignment, components):
 
 
 def table(headers, rows):
+    """Render a Markdown table."""
     lines = ["| " + " | ".join(headers) + " |", "| " + " | ".join("---" for _ in headers) + " |"]
     lines.extend("| " + " | ".join(str(v) for v in row) + " |" for row in rows)
     return "\n".join(lines)
 
 
 def render_report(output_root, source_roots, items_by_split, components_by_split, assignment, violations, args):
+    """Build the Markdown report: audit verdict, counts per split, class mix and buoy sequences."""
     split_rows = []
     class_rows = []
     for split in SPLITS:
@@ -412,52 +455,52 @@ def render_report(output_root, source_roots, items_by_split, components_by_split
             if stats["buoy_images"] > 0:
                 buoy_seq_rows.append([split, stats["component_id"], stats["images"], stats["buoy_images"]])
 
-    audit_status = "PASS — nessuna sequenza divisa tra split" if not violations else "FAIL"
+    audit_status = "PASS: no sequence is split across sets" if not violations else "FAIL"
     lines = [
-        "# Report split sequence-safe",
+        "# Sequence-safe split report",
         "",
-        f"- Sorgenti: {', '.join(f'`{p}`' for p in source_roots)}",
+        f"- Sources: {', '.join(f'`{p}`' for p in source_roots)}",
         f"- Output: `{output_root}`",
-        f"- Ratio target: train={args.train_ratio}, val={args.val_ratio}, test={args.test_ratio}",
+        f"- Target ratios: train={args.train_ratio}, val={args.val_ratio}, test={args.test_ratio}",
         f"- Seed: {args.seed}",
         "",
-        "## Audit leakage (obbligatorio)",
+        "## Leakage audit (mandatory)",
         "",
         f"**{audit_status}**",
         "",
     ]
     if violations:
-        lines.append("Sequenze divise (BUG — non dovrebbe mai succedere per costruzione):")
+        lines.append("Split sequences (BUG: this must never happen by construction):")
         for seq, splits in violations.items():
             lines.append(f"- `{seq}`: {sorted(splits)}")
         lines.append("")
 
     lines += [
-        "## Conteggi per split",
+        "## Counts per split",
         "",
-        table(["Split", "Immagini", "Oggetti", "Sequenze"], split_rows),
+        table(["Split", "Images", "Objects", "Sequences"], split_rows),
         "",
-        "## Distribuzione classi",
+        "## Class distribution",
         "",
-        table(["Split", "Classe", "Oggetti", "%"], class_rows),
+        table(["Split", "Class", "Objects", "%"], class_rows),
         "",
-        "## Distribuzione boe per sequenza (attenzione: dati scarsi)",
+        "## Buoy distribution per sequence (caution: scarce data)",
         "",
-        "Il dataset attuale ha poche sequenze con boe. Una stratificazione a "
-        "livello di sequenza (corretta, qui applicata) puo' comunque produrre "
-        "uno split con zero o pochissime boe in un dato split, semplicemente "
-        "perche' non ci sono abbastanza sequenze-boe da distribuire in modo "
-        "equilibrato. Questo NON e' un bug dello script: e' il problema di "
-        "scarsita' dati gia' osservato nei tentativi EASY-v2/v2.1 (recall boe "
-        "collassato a 0.00). Controllare questa tabella prima di allenare.",
+        "The current dataset has few sequences with buoys. A correct, sequence-level "
+        "stratification (as applied here) can still produce a split with zero or very "
+        "few buoys in a given set, simply because there are not enough buoy sequences "
+        "to distribute evenly. This is NOT a bug of the script: it is the data-scarcity "
+        "problem already observed in the EASY-v2/v2.1 attempts (buoy recall collapsed "
+        "to 0.00). Check this table before training.",
         "",
-        table(["Split", "Sequenza", "Immagini", "Immagini con boe"], buoy_seq_rows) if buoy_seq_rows else "_Nessuna sequenza con boe trovata._",
+        table(["Split", "Sequence", "Images", "Images with buoys"], buoy_seq_rows) if buoy_seq_rows else "_No sequence with buoys found._",
         "",
     ]
     return "\n".join(lines) + "\n"
 
 
 def main():
+    """Collect, assign, audit and write the split."""
     args = parse_args()
     source_roots = [Path(p) for p in args.source_root]
     output_root = Path(args.output_root)
@@ -470,14 +513,14 @@ def main():
 
     items = collect_items(source_roots, args.seaships_block_size)
     if not items:
-        raise SystemExit(f"Nessuna immagine trovata sotto {source_roots}")
+        raise SystemExit(f"No image found under {source_roots}")
 
     components = merge_duplicate_sequences(items)
     components_stats = {cid: sequence_stats(cid, its) for cid, its in components.items()}
 
     unknown_pinned = sorted(set(pinned) - set(components_stats))
     if unknown_pinned:
-        raise SystemExit(f"Sequenze pinnate non trovate nel dataset: {unknown_pinned}")
+        raise SystemExit(f"Pinned sequences not found in the dataset: {unknown_pinned}")
 
     assignment = stratified_assign(
         components_stats, pinned, args.train_ratio, args.val_ratio, args.test_ratio, args.seed,
@@ -485,7 +528,7 @@ def main():
 
     violations = audit_no_cross_split_leakage(assignment, components)
     if violations:
-        raise RuntimeError(f"Leakage strutturale rilevato (non dovrebbe essere possibile): {violations}")
+        raise RuntimeError(f"Structural leakage detected (this should be impossible): {violations}")
 
     items_by_split = {s: [] for s in SPLITS}
     components_by_split = {s: [] for s in SPLITS}
@@ -515,7 +558,7 @@ def main():
 
     print(f"Leakage audit: {'PASS' if not violations else 'FAIL'}")
     for s in SPLITS:
-        print(f"{s}: {len(items_by_split[s])} immagini, {len(components_by_split[s])} sequenze")
+        print(f"{s}: {len(items_by_split[s])} images, {len(components_by_split[s])} sequences")
     print(f"Report: {report_path}")
     print(f"Dataset: {output_root}")
 
