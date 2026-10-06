@@ -70,7 +70,7 @@ python -m unittest discover -s tests            # run the tests
 
 Running the released model needs only ONNX Runtime and the pre/post-processing
 described in the model card; a complete, tested implementation is
-[`inference_image.py`](https://github.com/carminecoppola/EASY-Maritime-Awareness-Dashboard/blob/main/inference_image.py)
+[`inference_image.py`](https://github.com/carminecoppola/EASY-Maritime-Awareness-Dashboard/blob/main/easy_dashboard/inference_image.py)
 in the dashboard repository.
 
 ## Reproducing the experiments
